@@ -1,6 +1,7 @@
 package com.example.siren.domain.member;
 
 import com.example.siren.domain.MnN.MemberAndChat;
+import com.example.siren.domain.MnN.MemberAndPost;
 import jakarta.persistence.*;
 
 import jakarta.validation.constraints.NotEmpty;
@@ -28,6 +29,9 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private Set<MemberAndChat> enrollments = new HashSet<>();
+
+    @OneToMany(mappedBy = "postMember")
+    private Set<MemberAndPost> postEnrollments = new HashSet<>();
 
 
 

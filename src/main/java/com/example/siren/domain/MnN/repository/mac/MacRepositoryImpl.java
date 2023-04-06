@@ -1,8 +1,6 @@
-package com.example.siren.domain.MnN.repository;
+package com.example.siren.domain.MnN.repository.mac;
 
 import com.example.siren.domain.MnN.MemberAndChat;
-import com.example.siren.domain.chat.ChatRoom;
-import com.example.siren.domain.member.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;

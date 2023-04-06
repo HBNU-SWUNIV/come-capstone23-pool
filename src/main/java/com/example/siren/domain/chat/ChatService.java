@@ -1,13 +1,8 @@
 package com.example.siren.domain.chat;
 
-import com.example.siren.domain.MnN.MemberAndChat;
-import com.example.siren.domain.MnN.repository.SpringDataJpaMacRepository;
-import com.example.siren.domain.member.Member;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.socket.TextMessage;
@@ -15,7 +10,6 @@ import org.springframework.web.socket.WebSocketSession;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service

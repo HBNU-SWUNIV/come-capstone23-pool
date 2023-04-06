@@ -1,14 +1,11 @@
 package com.example.siren.domain.MnN.service;
 
 import com.example.siren.domain.MnN.MemberAndChat;
-import com.example.siren.domain.MnN.repository.MacRepository;
-import com.example.siren.domain.MnN.repository.MacRepositoryImpl;
-import com.example.siren.domain.MnN.repository.SpringDataJpaMacRepository;
+import com.example.siren.domain.MnN.repository.mac.MacRepositoryImpl;
 import com.example.siren.domain.chat.ChatRoom;
 import com.example.siren.domain.chat.ChatService;
 import com.example.siren.domain.member.Member;
 import com.example.siren.domain.member.repository.JpaMemberRepository;
-import com.example.siren.domain.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

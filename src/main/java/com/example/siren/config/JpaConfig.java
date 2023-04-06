@@ -30,7 +30,7 @@ public class JpaConfig {
     public MemberRepository memberRepository() {
         return new JpaMemberRepository(springDataJpaMemberRepository);
     }
-    @Bean
+   /* @Bean
     public PostService postService() {
         return new JpaPostService(postRepository());
     }
@@ -38,5 +38,5 @@ public class JpaConfig {
     @Bean
     public PostRepository postRepository() {
         return new JpaPostRepository(springDataJpaPostRepository);
-    }
+    }*/
 }

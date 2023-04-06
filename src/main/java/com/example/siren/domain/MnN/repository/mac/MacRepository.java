@@ -1,4 +1,4 @@
-package com.example.siren.domain.MnN.repository;
+package com.example.siren.domain.MnN.repository.mac;
 
 import com.example.siren.domain.MnN.MemberAndChat;
 import com.example.siren.domain.chat.ChatRoom;

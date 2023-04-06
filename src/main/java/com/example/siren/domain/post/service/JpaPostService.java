@@ -4,6 +4,7 @@ import com.example.siren.domain.member.Member;
 import com.example.siren.domain.member.MemberUpdateDto;
 import com.example.siren.domain.member.repository.MemberRepository;
 import com.example.siren.domain.post.Post;
+import com.example.siren.domain.post.PostSearchCond;
 import com.example.siren.domain.post.PostUpdateDto;
 import com.example.siren.domain.post.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
@@ -35,7 +36,12 @@ public class JpaPostService implements PostService {
     }
 
     @Override
-    public List<Post> findItems() {
-        return repository.findAll();
+    public Optional<Post> findByWriterId(Long id) {
+        return repository.findByWriterId(id);
+    }
+
+    @Override
+    public List<Post> findItems(PostSearchCond cond) {
+        return repository.findAll(cond);
     }
 }

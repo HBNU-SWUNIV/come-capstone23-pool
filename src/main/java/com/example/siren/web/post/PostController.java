@@ -1,7 +1,9 @@
-package com.example.siren.web;
+package com.example.siren.web.post;
 
 import com.example.siren.domain.post.Post;
+import com.example.siren.domain.post.PostSearchCond;
 import com.example.siren.domain.post.service.PostService;
+import com.example.siren.web.error.ErrorResult;
 import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Slf4j
@@ -23,17 +26,32 @@ public class PostController {
     private final PostService postService;
 
     @ResponseBody
+    @ExceptionHandler(NoSuchElementException.class)
+    public ErrorResult NoSuchExHandler(NoSuchElementException e){
+        log.error("[exHandler] ex",e);
+        return new ErrorResult("No-Value",e.getMessage());
+    }
+
+    @ResponseBody
     @PostMapping("/post-json")
     public Post requestBodyJson(@RequestBody Post post){
         log.info("name = {},loginId = {}, content ={}",post.getName(),post.getLoginId(),post.getContent());
         postService.save(post);
         return post;
     }
-
+    @ResponseBody
+    @PostMapping("/writerId")
+    public Post getPostFromWriterId(@RequestBody PostDto postDto){
+       long id = postDto.getWriterId();
+       log.info("writerId = {}",id);
+       Post post = postService.findByWriterId(id).get();
+        return post;
+    }
     @ResponseBody
     @GetMapping
-    public String posts(){
-        List<Post> postList= postService.findItems();
+    public String posts(@ModelAttribute("postSearch")PostSearchCond cond){
+        log.info("cond.start={}",cond.getStart());
+        List<Post> postList= postService.findItems(cond);
         JSONObject obj = new JSONObject();
         try {
             JSONArray jArray = new JSONArray();//배열이 필요할때
@@ -46,6 +64,10 @@ public class PostController {
                 sObject.put("writerId",postList.get(i).getWriterId());
                 sObject.put("start",postList.get(i).getStart());
                 sObject.put("end",postList.get(i).getEnd());
+                sObject.put("people",postList.get(i).getPeople());
+                sObject.put("price",postList.get(i).getPrice());
+                sObject.put("time",postList.get(i).getTimes());
+                sObject.put("dow",postList.get(i).getDow());
 
                 jArray.put(sObject);
             }
@@ -62,6 +84,10 @@ public class PostController {
         Optional<Post> post = postService.findById(id);
         JSONObject obj = new JSONObject();
         obj.put("content", post.get().getContent());
+        obj.put("people",post.get().getPeople());
+        obj.put("price",post.get().getPrice());
+        obj.put("time",post.get().getTimes());
+        obj.put("dow",post.get().getDow());
         return obj.toString();
     }
 

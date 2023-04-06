@@ -3,6 +3,7 @@ package com.example.siren.domain.post.service;
 import com.example.siren.domain.member.Member;
 import com.example.siren.domain.member.MemberUpdateDto;
 import com.example.siren.domain.post.Post;
+import com.example.siren.domain.post.PostSearchCond;
 import com.example.siren.domain.post.PostUpdateDto;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public interface PostService {
     void update(Long id, PostUpdateDto updateParam);
 
     Optional<Post> findById(Long id);
+    Optional<Post>findByWriterId(Long id);
 
-    List<Post> findItems();
+    List<Post> findItems(PostSearchCond cond);
 }

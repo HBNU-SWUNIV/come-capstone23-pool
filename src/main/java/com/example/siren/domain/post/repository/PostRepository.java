@@ -2,6 +2,7 @@ package com.example.siren.domain.post.repository;
 
 import com.example.siren.domain.member.Member;
 import com.example.siren.domain.post.Post;
+import com.example.siren.domain.post.PostSearchCond;
 import com.example.siren.domain.post.PostUpdateDto;
 
 import java.util.List;
@@ -15,6 +16,8 @@ public interface PostRepository {
 
     Optional<Post> findById(Long id);
 
-    List<Post> findAll();
+    Optional<Post>findByWriterId(Long id);
+
+    List<Post> findAll(PostSearchCond cond);
 
 }
