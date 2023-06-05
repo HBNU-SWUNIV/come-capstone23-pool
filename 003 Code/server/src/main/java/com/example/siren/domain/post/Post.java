@@ -32,6 +32,19 @@ public class Post {
     private int price;
     private String info;
 
+    @Column(name = "OP_GENDER",length = 10)
+    private String gender;
+    @Column(name = "OP_SMOKE",length = 10)
+    private String smoke;
+    @Column(name = "OP_PET",length = 10)
+    private String pet;
+    @Column(name = "OP_CHILD",length = 10)
+    private String child;
+    @Column(name = "OP_BAGGAGE",length = 10)
+    private String baggage;
+
+
+
     @OneToMany(mappedBy = "post")
     private Set<MemberAndPost> postEnrollments = new HashSet<>();
 
@@ -46,7 +59,7 @@ public class Post {
         this.end = end;
         this.content = content;
     }*/
-    public Post(Long writerId, String name, String loginId, String start, String end, String content, int people, String times, String dow, int price,String info) {
+    public Post(Long writerId, String name, String loginId, String start, String end, String content, int people, String times, String dow, int price,String info,String gender,String smoke,String pet,String child, String baggage) {
         this.writerId = writerId;
         this.name = name;
         this.loginId = loginId;
@@ -58,6 +71,12 @@ public class Post {
         this.dow = dow;
         this.price = price;
         this.info = info;
+        this.gender = gender;
+        this.smoke = smoke;
+        this.pet = pet;
+        this.child = child;
+        this.baggage = baggage;
+
     }
 
 }

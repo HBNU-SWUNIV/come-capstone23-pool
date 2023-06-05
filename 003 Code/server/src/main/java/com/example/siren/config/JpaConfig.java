@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class JpaConfig {
     private final SpringDataJpaMemberRepository springDataJpaMemberRepository;
-    private final SpringDataJpaPostRepository springDataJpaPostRepository;
+/*    private final SpringDataJpaPostRepository springDataJpaPostRepository;
 
     @Bean
     public MemberService memberService() {
@@ -29,7 +29,7 @@ public class JpaConfig {
     @Bean
     public MemberRepository memberRepository() {
         return new JpaMemberRepository(springDataJpaMemberRepository);
-    }
+    }*/
    /* @Bean
     public PostService postService() {
         return new JpaPostService(postRepository());

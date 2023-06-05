@@ -2,9 +2,12 @@ package com.example.siren.web.MnN;
 
 import com.example.siren.domain.MnN.Crew;
 import com.example.siren.domain.MnN.MemberAndPost;
+import com.example.siren.domain.MnN.repository.map.MapRepository;
+import com.example.siren.domain.MnN.repository.map.MapRepositoryImpl;
 import com.example.siren.domain.MnN.service.MapService;
 import com.example.siren.domain.member.Member;
 import com.example.siren.domain.post.Post;
+import com.example.siren.web.FindByNickDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONArray;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -25,6 +29,7 @@ import java.util.List;
 public class MapController {
 
     private final MapService mapService;
+    private final MapRepositoryImpl mapRepository;
 
     @ResponseBody
     @PostMapping("/save")
@@ -32,6 +37,51 @@ public class MapController {
         log.info("loginId={},postID ={},dow={},times={}",idDTO2.getLoginId(),idDTO2.getPostId(),idDTO2.getDow(),idDTO2.getTimes());
         return mapService.save(idDTO2.getLoginId(),idDTO2.getPostId(),idDTO2.getDow(),idDTO2.getTimes());
     }
+
+    @ResponseBody
+    @PostMapping("/m_schedule")
+    public String findByNickname(@RequestBody IdDTO idDTO){
+        List<MemberAndPost> findMap = mapRepository.findByMemberId(idDTO.getMemberId());
+
+        String [] check = {"x","x","x","x","x","x","x"};
+        for(MemberAndPost i : findMap){
+            String [] arr = i.getDow().split(",");
+            String arr2 = i.getTimes();
+            for(String j:arr){
+                log.info("j={}",j);
+                String input = "";
+                input = input+arr2;
+                check[Integer.parseInt(j)-1] = input;
+            }
+        }
+        JSONObject obj = new JSONObject();
+        obj.put("result",check);
+        return obj.toString();
+    }
+/*    @ResponseBody
+    @PostMapping("/saveCheck")
+    public String saveCheck(@RequestBody IdDTO idDTO){
+        List<MemberAndPost> findMap = mapRepository.findByMemberId(idDTO.getMemberId());
+
+        String [] check = {"x","x","x","x","x","x","x"};
+        for(MemberAndPost i : findMap){
+            String [] arr = i.getDow().split(",");
+            String [] arr2 = i.getTimes().split(",");
+            for(String j:arr){
+                log.info("j={}",j);
+                String input = "";
+                for(String k : arr2 ){
+                    log.info("k={}",k);
+                    input = input+String.valueOf(k.charAt(0));
+                }
+                check[Integer.parseInt(j)-1] = input;
+            }
+        }
+        JSONObject obj = new JSONObject();
+        obj.put("result",check);
+        return obj.toString();
+    }*/
+
     @ResponseBody
     @PostMapping("/member>>post")
     public String findByMemberId(@RequestBody IdDTO2 idDTO2){

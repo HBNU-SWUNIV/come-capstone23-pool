@@ -11,10 +11,15 @@ public interface MemberRepository {
     Member save(Member member);
 
     void update(MemberUpdateDto updateParam);
+    void updateProfile(MemberUpdateDto updateParam);
 
+    void updateCar(MemberUpdateDto updateParam);
+
+    void updateMoney(Long memberId,int money);
     Optional<Member> findById(Long id);
 
     Optional<Member> findByLoginId(String loginId);
+    Optional<Member> findByNickname(String loginId);
 
     List<Member> findAll();
 

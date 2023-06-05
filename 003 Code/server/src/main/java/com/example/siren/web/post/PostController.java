@@ -80,10 +80,8 @@ public class PostController {
                 sObject.put("end",postList.get(i).getEnd());
                 sObject.put("people",postList.get(i).getPeople());
                 sObject.put("price",postList.get(i).getPrice());
-                sObject.put("time",postList.get(i).getTimes());
+                sObject.put("times",postList.get(i).getTimes());
                 sObject.put("dow",postList.get(i).getDow());
-
-
                 jArray.put(sObject);
             }
             obj.put("item", jArray);//배열을 넣음
@@ -103,6 +101,12 @@ public class PostController {
         obj.put("price",post.get().getPrice());
         obj.put("time",post.get().getTimes());
         obj.put("dow",post.get().getDow());
+        obj.put("gender",post.get().getGender());
+        obj.put("smoke",post.get().getSmoke());
+        obj.put("pet",post.get().getPet());
+        obj.put("child",post.get().getChild());
+        obj.put("baggage",post.get().getBaggage());
+
         return obj.toString();
     }
 

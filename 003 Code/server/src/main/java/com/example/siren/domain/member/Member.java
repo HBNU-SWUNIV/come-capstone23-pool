@@ -27,6 +27,13 @@ public class Member {
     @NotEmpty
     private String name;
 
+    private Long profile;
+
+    private String gender;
+    private Long car;
+
+    private int money;
+
     @OneToMany(mappedBy = "member",cascade = CascadeType.REMOVE)
     private Set<MemberAndChat> enrollments = new HashSet<>();
 
@@ -38,9 +45,13 @@ public class Member {
     public Member() {// **JPA 에서는 빈 생성자가 필수 요소이다**
     }
 
-    public Member(String loginId, String password,String name) {
+    public Member(String loginId, String password,String name,Long profile,String gender, Long car,int money) {
         this.loginId = loginId;
         this.password = password;
         this.name = name;
+        this.profile = profile;
+        this.gender = gender;
+        this.car = car;
+        this.money = money;
     }
 }

@@ -10,8 +10,17 @@ public interface MemberService {
     Member save(Member member);
 
     void update(MemberUpdateDto updateParam);
+    void updateProfile(MemberUpdateDto updateParam);
+    void updateCar(MemberUpdateDto updateParam);
+
+    void plusMoney(MemberUpdateDto updateDto);
+
+    String minusMoney(MemberUpdateDto updateDto);
+
+    String sendMoney(MemberUpdateDto updateDto);
 
     Optional<Member> findById(Long id);
+    Optional<Member> findByNickname(String name);
 
     List<Member> findItems();
 

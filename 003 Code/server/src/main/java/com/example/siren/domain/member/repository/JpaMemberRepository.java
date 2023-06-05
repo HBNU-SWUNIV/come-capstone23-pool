@@ -40,6 +40,24 @@ public class JpaMemberRepository implements MemberRepository{
         findMember.setName(updateParam.getName());
     }
 
+    public void updateProfile(MemberUpdateDto updateParam) {
+        Long memberId = updateParam.getId();
+        Member findMember = repository.findById(memberId).orElseThrow();
+        findMember.setProfile(updateParam.getProfile());
+    }
+
+    public void updateCar(MemberUpdateDto updateParam) {
+        Long memberId = updateParam.getId();
+        Member findMember = repository.findById(memberId).orElseThrow();
+        findMember.setCar(updateParam.getId());
+    }
+
+    @Override
+    public void updateMoney(Long memberId,int money) {
+        Member findMember = repository.findById(memberId).orElseThrow();
+        findMember.setMoney(money);
+    }
+
     @Override
     public Optional<Member> findById(Long id) {
         return repository.findById(id);
@@ -54,6 +72,14 @@ public class JpaMemberRepository implements MemberRepository{
         return Optional.empty();
     }
 
+    public Optional<Member> findByNickname(String name){
+        List<Member> all = findAll();
+        for(Member m: all){
+            if(m.getName().equals(name))
+                return Optional.of(m);
+        }
+        return Optional.empty();
+    }
     @Override
     public List<Member> findAll() {
         return repository.findAll();

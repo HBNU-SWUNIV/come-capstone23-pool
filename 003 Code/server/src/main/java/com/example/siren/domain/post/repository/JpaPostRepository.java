@@ -53,15 +53,41 @@ public class JpaPostRepository implements PostRepository{
         String start = cond.getStart();
         String end = cond.getEnd();
         String time = cond.getTimes();
+        String dow = cond.getDow();
+        String gender = cond.getGender();
+        String smoke = cond.getSmoke();
+        String pet = cond.getPet();
+        String child = cond.getChild();
+        String baggage = cond.getBaggage();
 
-        if(StringUtils.hasText(start) && StringUtils.hasText(end)){
-            return repository.findPosts("%"+start+"%","%"+end+"%","%"+time+"%");
+
+
+        if(StringUtils.hasText(start) && StringUtils.hasText(end) && StringUtils.hasText(time) && StringUtils.hasText(dow) && StringUtils.hasText(gender) && StringUtils.hasText(smoke) && StringUtils.hasText(pet) && StringUtils.hasText(child) && StringUtils.hasText(baggage) ){
+            return repository.findPosts("%"+start+"%","%"+end+"%","%"+time+"%","%"+dow+"%","%"+gender+"%","%"+smoke+"%","%"+pet+"%","%"+child+"%","%"+baggage+"%");
         }else if(StringUtils.hasText(start)){
             return repository.findByStartLike("%"+start+"%");
         }else if(StringUtils.hasText(end)){
             return repository.findByEndLike("%"+end+"%");
         }else if(StringUtils.hasText(time)){
             return repository.findByTimesLike("%"+time+"%");
+        }
+        else if(StringUtils.hasText(dow)){
+            return repository.findByDowLike("%"+dow+"%");
+        }
+        else if(StringUtils.hasText(gender)){
+            return repository.findByGenderLike("%"+gender+"%");
+        }
+        else if(StringUtils.hasText(smoke)){
+            return repository.findBySmokeLike("%"+smoke+"%");
+        }
+        else if(StringUtils.hasText(pet)){
+            return repository.findByPetLike("%"+pet+"%");
+        }
+        else if(StringUtils.hasText(child)){
+            return repository.findByChildLike("%"+child+"%");
+        }
+        else if(StringUtils.hasText(baggage)){
+            return repository.findByBaggageLike("%"+baggage+"%");
         }else {
             return repository.findAll();
         }

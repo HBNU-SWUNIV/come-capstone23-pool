@@ -10,6 +10,10 @@ public class IdDTO {
     public IdDTO() {
     }
 
+    public IdDTO(Long memberId) {
+        this.memberId = memberId;
+    }
+
     public IdDTO(Long memberId, String roomId) {
         this.memberId = memberId;
         this.roomId = roomId;
