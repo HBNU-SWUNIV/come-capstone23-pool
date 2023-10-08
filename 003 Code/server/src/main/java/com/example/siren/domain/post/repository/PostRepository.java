@@ -14,7 +14,10 @@ public interface PostRepository {
 
      void update(PostUpdateDto updateParam);
     void updateInfo(PostUpdateDto updateParam);
-
+    void updateDriver(Long id,Long id2);
+    void updateReview(Long id, float review,int rCount);
+    void deleteApp(PostUpdateDto updateParam);
+    void application(PostUpdateDto updateParam);
 
     Optional<Post> findById(Long id);
 

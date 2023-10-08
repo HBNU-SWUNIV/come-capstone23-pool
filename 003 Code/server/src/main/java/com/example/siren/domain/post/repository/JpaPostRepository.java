@@ -5,6 +5,7 @@ import com.example.siren.domain.post.Post;
 import com.example.siren.domain.post.PostSearchCond;
 import com.example.siren.domain.post.PostUpdateDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -17,6 +18,7 @@ import java.util.Optional;
 @Transactional
 @Repository
 @RequiredArgsConstructor
+@Slf4j
 public class JpaPostRepository implements PostRepository{
 
     private final SpringDataJpaPostRepository repository;
@@ -37,6 +39,58 @@ public class JpaPostRepository implements PostRepository{
         Long postId = updateParam.getId();
         Post findPost = repository.findById(postId).orElseThrow();
         findPost.setInfo(updateParam.getInfo());
+    }
+    @Override
+    public void updateDriver(Long id,Long driver) {
+        Post findPost = repository.findById(id).orElseThrow();
+        String original = findPost.getDriver();
+        findPost.setDriver(original+","+String.valueOf(driver));
+    }
+
+    @Override
+    public void updateReview(Long id, float updateReview,int updateRCount) {
+        Post findPost = repository.findById(id).orElseThrow();
+        findPost.setReview(updateReview);
+        findPost.setRCount(updateRCount);
+    }
+
+    @Override
+    public void application(PostUpdateDto updateParam) {
+        Post findPost = repository.findById(updateParam.getId()).orElseThrow();
+        String app = findPost.getApp();
+        String memberId = String.valueOf(updateParam.getMemberId());
+        if(app.equals("x")){
+            findPost.setApp(memberId);
+        }else {
+            findPost.setApp(app+","+memberId);
+        }
+    }
+
+    @Override
+    public void deleteApp(PostUpdateDto updateParam) {
+        Post findPost = repository.findById(updateParam.getId()).orElseThrow();
+        String app = findPost.getApp();
+        String memberId = String.valueOf(updateParam.getMemberId());
+        String newStr = ".";
+        if(app.equals("x")){
+            log.info("delete Nothing");
+        }else {
+            String arr[] = app.split(",");
+            for(String i : arr){
+                if(i.equals(memberId)){
+                    log.info("delete");
+                }else{
+                    newStr += ","+i;
+                    log.info("newStr={}",newStr);
+                }
+            }
+            if(newStr.length()<3){
+                newStr = "x";
+            }else {
+                newStr = newStr.substring(2);
+            }
+            findPost.setApp(newStr);
+        }
     }
 
     @Override

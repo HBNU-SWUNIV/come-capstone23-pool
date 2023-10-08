@@ -42,7 +42,14 @@ public class Post {
     private String child;
     @Column(name = "OP_BAGGAGE",length = 10)
     private String baggage;
-
+    @Column(name = "REVIEW")
+    private float review;
+    @Column(name = "R_COUNT")
+    private int rCount;
+    private String mode;
+    private String driver;
+    private String app;
+    private String weight;
 
 
     @OneToMany(mappedBy = "post")
@@ -59,7 +66,8 @@ public class Post {
         this.end = end;
         this.content = content;
     }*/
-    public Post(Long writerId, String name, String loginId, String start, String end, String content, int people, String times, String dow, int price,String info,String gender,String smoke,String pet,String child, String baggage) {
+
+    public Post(Long writerId, String name, String loginId, String start, String end, String content, int people, String times, String dow, int price, String info, String gender, String smoke, String pet, String child, String baggage, float review, int rCount, String mode, String driver, String app, String weight, Set<MemberAndPost> postEnrollments) {
         this.writerId = writerId;
         this.name = name;
         this.loginId = loginId;
@@ -76,7 +84,12 @@ public class Post {
         this.pet = pet;
         this.child = child;
         this.baggage = baggage;
-
+        this.review = review;
+        this.rCount = rCount;
+        this.mode = mode;
+        this.driver = driver;
+        this.app = app;
+        this.weight = weight;
+        this.postEnrollments = postEnrollments;
     }
-
 }

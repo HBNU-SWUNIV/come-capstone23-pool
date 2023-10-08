@@ -16,6 +16,8 @@ public interface MemberRepository {
     void updateCar(MemberUpdateDto updateParam);
 
     void updateMoney(Long memberId,int money);
+
+    void minus(MemberUpdateDto updateParam);
     Optional<Member> findById(Long id);
 
     Optional<Member> findByLoginId(String loginId);
@@ -26,4 +28,5 @@ public interface MemberRepository {
     Member delete(Member member);
 
 
+    void token(MemberUpdateDto updateDto);
 }

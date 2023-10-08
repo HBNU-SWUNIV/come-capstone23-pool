@@ -43,12 +43,13 @@ public class MapController {
     public String findByNickname(@RequestBody IdDTO idDTO){
         List<MemberAndPost> findMap = mapRepository.findByMemberId(idDTO.getMemberId());
 
-        String [] check = {"x","x","x","x","x","x","x"};
+        String [] check = {"x","x","x","x","x"};
         for(MemberAndPost i : findMap){
             String [] arr = i.getDow().split(",");
             String arr2 = i.getTimes();
             for(String j:arr){
                 log.info("j={}",j);
+                log.info("arr2={}",arr2);
                 String input = "";
                 input = input+arr2;
                 check[Integer.parseInt(j)-1] = input;
@@ -57,6 +58,30 @@ public class MapController {
         JSONObject obj = new JSONObject();
         obj.put("result",check);
         return obj.toString();
+    }
+    @ResponseBody
+    @PostMapping("/getSchedule")
+    public String getSchedule(@RequestBody IdDTO2 idDTO2){
+        log.info("memberId={}",idDTO2.getMemberId());
+        List<Post>posts = mapService.findByMemberId(idDTO2.getMemberId());
+        JSONObject obj = new JSONObject();
+        try {
+            JSONArray jArray = new JSONArray();//배열이 필요할때
+            for (int i = 0; i < posts.size(); i++)//배열
+            {
+                JSONObject sObject = new JSONObject();//배열 내에 들어갈 json
+                sObject.put("id",posts.get(i).getId());
+                sObject.put("start",posts.get(i).getStart());
+                sObject.put("times",posts.get(i).getTimes());
+                sObject.put("dow",posts.get(i).getDow());
+                jArray.put(sObject);
+            }
+            obj.put("item", jArray);//배열을 넣음
+            return obj.toString();
+
+        } catch (JSONException e) {
+            return "error";
+        }
     }
 /*    @ResponseBody
     @PostMapping("/saveCheck")
@@ -105,6 +130,9 @@ public class MapController {
                 sObject.put("dow",posts.get(i).getDow());
                 sObject.put("content",posts.get(i).getContent());
                 sObject.put("info",posts.get(i).getInfo());
+                sObject.put("mode",posts.get(i).getMode());
+                sObject.put("review",posts.get(i).getReview());
+                sObject.put("rCount",posts.get(i).getRCount());
                 jArray.put(sObject);
             }
             obj.put("item", jArray);//배열을 넣음

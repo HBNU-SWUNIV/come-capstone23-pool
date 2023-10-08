@@ -34,6 +34,11 @@ public class Member {
 
     private int money;
 
+    private float score;
+    private int late;
+
+    private String token;
+
     @OneToMany(mappedBy = "member",cascade = CascadeType.REMOVE)
     private Set<MemberAndChat> enrollments = new HashSet<>();
 
@@ -45,7 +50,7 @@ public class Member {
     public Member() {// **JPA 에서는 빈 생성자가 필수 요소이다**
     }
 
-    public Member(String loginId, String password,String name,Long profile,String gender, Long car,int money) {
+    public Member(String loginId, String password,String name,Long profile,String gender, Long car,int money,float score,int late) {
         this.loginId = loginId;
         this.password = password;
         this.name = name;
@@ -53,5 +58,11 @@ public class Member {
         this.gender = gender;
         this.car = car;
         this.money = money;
+        this.score =score;
+        this.late = late;
+    }
+
+    public Member(String token) {
+        this.token = token;
     }
 }

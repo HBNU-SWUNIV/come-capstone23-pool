@@ -7,4 +7,6 @@ public interface MapRepository {
     MemberAndPost save(MemberAndPost memberAndPost);
 
     MemberAndPost delete(MemberAndPost memberAndPost);
+
+    String reviewUpdate(Long postId,Long memberId);
 }

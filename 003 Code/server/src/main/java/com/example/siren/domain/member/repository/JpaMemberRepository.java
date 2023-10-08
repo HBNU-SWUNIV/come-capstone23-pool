@@ -62,7 +62,16 @@ public class JpaMemberRepository implements MemberRepository{
     public Optional<Member> findById(Long id) {
         return repository.findById(id);
     }
+    public void minus(MemberUpdateDto updateDto) {
+        Optional<Member> member = repository.findById(updateDto.getId());
+        member.get().setScore((float) (member.get().getScore()-0.1));
+        member.get().setLate(member.get().getLate()+1);
+    }
 
+    public void token(MemberUpdateDto updateDto) {
+        Optional<Member> member = repository.findById(updateDto.getId());
+        member.get().setToken(updateDto.getToken());
+    }
     public Optional<Member> findByLoginId(String loginId){
         List<Member> all = findAll();
         for(Member m: all){

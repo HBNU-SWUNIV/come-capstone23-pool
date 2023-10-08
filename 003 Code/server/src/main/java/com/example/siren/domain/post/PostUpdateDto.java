@@ -11,6 +11,8 @@ public class PostUpdateDto {
     private int people;
     private String info;
 
+    private Long memberId;
+
     public PostUpdateDto() {
     }
 /*
@@ -19,6 +21,11 @@ public class PostUpdateDto {
         this.content = content;
         this.people = people;
     }*/
+
+    public PostUpdateDto(Long id, Long memberId) {
+        this.id = id;
+        this.memberId = memberId;
+    }
 
     public PostUpdateDto(Long id, int people) {
         this.id = id;

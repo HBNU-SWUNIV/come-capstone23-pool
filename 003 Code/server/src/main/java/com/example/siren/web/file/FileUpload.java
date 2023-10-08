@@ -77,7 +77,7 @@ public class FileUpload {
      Long profile = member.get().getProfile();
      Board board = boardService.findBoard(profile).orElseThrow(RuntimeException::new);
      String imgPath = board.getStoredFileName();
-     Resource resource = new FileSystemResource("C:\\Users\\hk177\\come-capstone23-pool\\"+imgPath);
+     Resource resource = new FileSystemResource("저장위치");
 
      if(!resource.exists())
          return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
@@ -85,7 +85,7 @@ public class FileUpload {
      Path filePath = null;
 
      try{
-         filePath = Paths.get("C:\\Users\\hk177\\come-capstone23-pool\\"+imgPath);
+         filePath = Paths.get("저장위치");
          headers.add("Content-Type", Files.probeContentType(filePath));
      }catch (IOException e){
          e.printStackTrace();

@@ -10,6 +10,6 @@ public class fileConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**").addResourceLocations("file:///C:/Users/hk177/come-capstone23-pool/img/");
+        registry.addResourceHandler("/**").addResourceLocations("저장위치");
     }
 }

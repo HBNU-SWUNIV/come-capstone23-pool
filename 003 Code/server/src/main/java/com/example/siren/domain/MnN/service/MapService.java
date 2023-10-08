@@ -31,7 +31,7 @@ public class MapService {
         Optional<Member> member = memberRepository.findByLoginId(memberId);
         Optional<Post> post = postRepository.findById(postId);
         log.info("mapMember={},mapPost={}",member.get().getName(),post.get().getContent());
-        MemberAndPost map = new MemberAndPost(member.get(),post.get(),dow,times);
+        MemberAndPost map = new MemberAndPost(member.get(),post.get(),dow,times,false);
         String[] people = String.valueOf(post.get().getPeople()).split("");
         String[] dows  =dow.split(",");
         for(String i : dows){
@@ -67,5 +67,9 @@ public class MapService {
             crews.add(crew);
         }
         return crews;
+    }
+
+    public String updateReview(Long postId,Long memberId){
+      return repository.reviewUpdate(postId, memberId);
     }
 }

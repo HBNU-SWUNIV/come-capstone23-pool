@@ -18,7 +18,7 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 public class FirebaseCloudMessageService {
-    private final String API_URL = "";
+    private final String API_URL = "fcm URL";
     private final ObjectMapper objectMapper;
 
     public void sendMessageTo(String targetToken, String title, String body) throws IOException {
@@ -58,7 +58,7 @@ public class FirebaseCloudMessageService {
 
         GoogleCredentials googleCredentials = GoogleCredentials
                 .fromStream(new ClassPathResource(firebaseConfigPath).getInputStream())
-                .createScoped(List.of(""));
+                .createScoped(List.of("https://www.googleapis.com/auth/cloud-platform"));
 
         googleCredentials.refreshIfExpired();
         return googleCredentials.getAccessToken().getTokenValue();

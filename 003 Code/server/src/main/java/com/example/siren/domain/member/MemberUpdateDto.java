@@ -15,6 +15,8 @@ public class MemberUpdateDto {
 
     private String sender;
 
+    private String token;
+
 
     public MemberUpdateDto() {
     }
@@ -42,5 +44,10 @@ public class MemberUpdateDto {
         this.id = id;
         Password = password;
         Name = name;
+    }
+
+    public MemberUpdateDto(Long id, String token) {
+        this.id = id;
+        this.token = token;
     }
 }

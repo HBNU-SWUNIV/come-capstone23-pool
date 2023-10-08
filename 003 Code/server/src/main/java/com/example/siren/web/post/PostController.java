@@ -1,6 +1,9 @@
 package com.example.siren.web.post;
 
 import com.example.siren.domain.MnN.service.MapService;
+import com.example.siren.domain.member.Member;
+import com.example.siren.domain.member.repository.MemberRepository;
+import com.example.siren.domain.member.service.MemberService;
 import com.example.siren.domain.post.Post;
 import com.example.siren.domain.post.PostSearchCond;
 import com.example.siren.domain.post.PostUpdateDto;
@@ -26,7 +29,9 @@ import java.util.Optional;
 public class PostController {
 
     private final PostService postService;
+    private final MemberService memberService;
 
+    private final MapService mapService;
 
     @ResponseBody
     @ExceptionHandler(NoSuchElementException.class)
@@ -62,8 +67,34 @@ public class PostController {
         return "ok";
     }
     @ResponseBody
+    @PostMapping("/driver")
+    public String driver(@RequestBody PostDto postDto){
+        Optional<Member> driver = memberService.findByLoginId(postDto.getInfo());
+        postService.updateDriver(postDto.getWriterId(),driver.get().getId());
+        return "ok";
+    }
+
+    @ResponseBody
+    @PostMapping("/review")
+    public String review(@RequestBody PostReviewDto reviewDto){
+        String mapCheck = mapService.updateReview(reviewDto.getId(), reviewDto.getMemberId());
+        if(mapCheck.equals("o")){
+            postService.updateReview(reviewDto);
+            return "o";
+        }else {
+            return "x";
+        }
+    }
+    @ResponseBody
     @GetMapping
     public String posts(@ModelAttribute("postSearch")PostSearchCond cond){
+        //  private float review;
+        //    @Column(name = "R_COUNT")
+        //    private int rCount;
+        //    private String mode;
+        //    private String driver;
+        //    private String app;
+        //    private String weight;
         log.info("cond.start={}",cond.getStart());
         List<Post> postList= postService.findItems(cond);
         JSONObject obj = new JSONObject();
@@ -82,6 +113,9 @@ public class PostController {
                 sObject.put("price",postList.get(i).getPrice());
                 sObject.put("times",postList.get(i).getTimes());
                 sObject.put("dow",postList.get(i).getDow());
+                sObject.put("review",postList.get(i).getReview());
+                sObject.put("rCount",postList.get(i).getRCount());
+                sObject.put("mode",postList.get(i).getMode());
                 jArray.put(sObject);
             }
             obj.put("item", jArray);//배열을 넣음
@@ -106,8 +140,44 @@ public class PostController {
         obj.put("pet",post.get().getPet());
         obj.put("child",post.get().getChild());
         obj.put("baggage",post.get().getBaggage());
+        obj.put("weight",post.get().getWeight());
 
         return obj.toString();
+    }
+
+    @ResponseBody
+    @GetMapping("/appList")
+    public String appList(@RequestParam Long postId){
+        Optional<Post> post = postService.findById(postId);
+        String app = post.get().getApp();
+        String apps[] = app.split(",");
+        JSONObject obj = new JSONObject();
+        try {
+            JSONArray jArray = new JSONArray();//배열이 필요할때
+            for (int i = 0; i < apps.length; i++)//배열
+            {
+                long id = Long.parseLong(apps[i]);
+                Optional<Member> member = memberService.findById(id);
+                JSONObject sObject = new JSONObject();//배열 내에 들어갈 json
+                sObject.put("id",id);
+                sObject.put("name", member.get().getName());
+                sObject.put("profile",member.get().getProfile());
+                sObject.put("score",member.get().getScore());
+                jArray.put(sObject);
+            }
+            obj.put("item", jArray);//배열을 넣음
+            return obj.toString();
+
+        } catch (JSONException e) {
+            return "error";
+        }
+    }
+
+    @ResponseBody
+    @PostMapping("/appDelete")
+    public String appDelete(@RequestBody PostUpdateDto param){
+        postService.deleteApp(param);
+        return "ok";
     }
 
 }

@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Repository
@@ -26,6 +27,25 @@ public class MapRepositoryImpl implements MapRepository {
         repository.delete(memberAndPost);
         return memberAndPost;
     }
+
+    public String reviewUpdate(Long postId,Long memberId){
+        List<MemberAndPost> maps = repository.findByPostMemberId(memberId);
+        String result ="x";
+        for(MemberAndPost i : maps){
+            Long id = i.getPost().getId();
+            if(id.equals(postId)){
+                log.info("mapId = {}",postId);
+                Optional<MemberAndPost> map = repository.findById(i.getId());
+                if(map.get().isReview()==false){
+                    map.get().setReview(true);
+                    result= "o";
+                }
+            }
+        }
+        log.info("mapReviewResult = {}",result);
+      return result;
+    }
+
 
     public List<MemberAndPost> findByMemberId(Long memberId){
         return repository.findByPostMemberId(memberId);

@@ -70,6 +70,14 @@ public class JpaMemberService implements MemberService{
         }
     }
 
+    public void minus(MemberUpdateDto updateDto) {
+        memberRepository.minus(updateDto);
+    }
+
+    public void token(MemberUpdateDto updateDto) {
+        memberRepository.token(updateDto);
+    }
+
     @Override
     public Optional<Member> findById(Long id) {
         return memberRepository.findById(id);
@@ -78,7 +86,10 @@ public class JpaMemberService implements MemberService{
     public Optional<Member> findByNickname(String name) {
         return memberRepository.findByNickname(name);
     }
-
+    @Override
+    public Optional<Member> findByLoginId(String name) {
+        return memberRepository.findByLoginId(name);
+    }
     @Override
     public List<Member> findItems() {
         return memberRepository.findAll();

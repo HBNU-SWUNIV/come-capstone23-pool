@@ -132,6 +132,26 @@ public class MemberController {
     }
 
     @ResponseBody
+    @PostMapping("/findOther")
+    public Member findOther(@RequestBody Member other){
+        Optional<Member> member = memberService.findByNickname(other.getName());
+        return member.get();
+    }
+
+    @ResponseBody
+    @PostMapping("/minus")
+    public void minus(@RequestBody MemberUpdateDto id){
+        memberService.minus(id);
+    }
+
+    @ResponseBody
+    @PostMapping("/token")
+    public void token(@RequestBody MemberUpdateDto token){
+        memberService.token(token);
+    }
+
+
+    @ResponseBody
     @GetMapping("/check")
     public String check(@RequestParam String memberId){
         Optional<Member> getMember = memberRepository.findByLoginId(memberId);

@@ -15,14 +15,18 @@ public interface MemberService {
 
     void plusMoney(MemberUpdateDto updateDto);
 
+    void minus(MemberUpdateDto updateDto);
     String minusMoney(MemberUpdateDto updateDto);
 
     String sendMoney(MemberUpdateDto updateDto);
 
     Optional<Member> findById(Long id);
     Optional<Member> findByNickname(String name);
+    Optional<Member> findByLoginId(String name);
 
     List<Member> findItems();
 
     Member delete(long id);
+
+    void token(MemberUpdateDto token);
 }
