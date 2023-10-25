@@ -8,7 +8,7 @@
 	<br>
 	<img src="https://img.shields.io/badge/Spring-6DB33F?style=flat&logo=Spring&logoColor=white" />
 	<br>
-	<img src="https://img.shields.io/badge/mongodb%20SQL-F80000?style=flat&logo=Oracle&logoColor=white" />
+	<img src="https://img.shields.io/badge/mongodb%#47A248?style=flat&logo=mongodb&logoColor=white" />
 	
 </div>
 <br>
