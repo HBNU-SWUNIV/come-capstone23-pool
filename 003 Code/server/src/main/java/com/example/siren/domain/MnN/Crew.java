@@ -9,12 +9,14 @@ public class Crew {
    private String memberName;
    private String dow;
    private String times;
+   private String driver;
 
 
-   public Crew(Long memberId, String memberName, String dow, String times) {
+   public Crew(Long memberId, String memberName, String dow, String times,String driver) {
       this.memberId = memberId;
       this.memberName = memberName;
       this.dow = dow;
       this.times = times;
+      this.driver = driver;
    }
 }

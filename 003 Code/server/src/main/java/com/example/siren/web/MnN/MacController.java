@@ -54,25 +54,5 @@ public class MacController {
             return "error";
         }
     }
-   /* @ResponseBody
-    @PostMapping("chatRoom>>member")
-    public String members(@RequestBody IdDTO idDTO){
-        List<Member> members = repository.getMemberByChatRoomId(idDTO.getRoomId());
-        JSONObject obj = new JSONObject();
-        try {
-            JSONArray jArray = new JSONArray();//배열이 필요할때
-            for (int i = 0; i < members.size(); i++)//배열
-            {
-                JSONObject sObject = new JSONObject();//배열 내에 들어갈 json
-                sObject.put("roomId",members.get(i).getId());
-                sObject.put("roomName", members.get(i).getName());
-                jArray.put(sObject);
-            }
-            obj.put("item", jArray);//배열을 넣음
-            return obj.toString();
 
-        } catch (JSONException e) {
-            return "error";
-        }
-    }*/
 }

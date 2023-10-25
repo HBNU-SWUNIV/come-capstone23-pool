@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
@@ -34,6 +35,14 @@ public class WebSocketHandler extends TextWebSocketHandler {
         log.info("chatRoom = {}",chatRoom.get());
         chatRoom.get().handlerActions(session,chatMessage,chatService);
 
+        if(chatMessage.getType().equals(ChatMessage.MessageType.TALK)){
+            ChatMessage save = new ChatMessage(chatMessage.getRoomId(),chatMessage.getSender(),chatMessage.getMessage());
+            chatService.saveChatMessage(save);
+        }
+    }
 
+    @Override
+    public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+        super.afterConnectionClosed(session, status);
     }
 }

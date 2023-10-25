@@ -16,7 +16,7 @@ import java.util.Optional;
 @Transactional
 @RequiredArgsConstructor
 public class JpaMemberRepository implements MemberRepository{
-    
+
     private final SpringDataJpaMemberRepository repository;
 
 
@@ -29,9 +29,9 @@ public class JpaMemberRepository implements MemberRepository{
             return null;
         }
     }
-  /*  public List<Member> getMemberByChatRoomId(String chatRoomId) {
-        return repository.findByChatRoomId(chatRoomId);
-    }*/
+    /*  public List<Member> getMemberByChatRoomId(String chatRoomId) {
+          return repository.findByChatRoomId(chatRoomId);
+      }*/
     @Override
     public void update(MemberUpdateDto updateParam) {
         Long memberId = updateParam.getId();
@@ -50,6 +50,10 @@ public class JpaMemberRepository implements MemberRepository{
         Long memberId = updateParam.getId();
         Member findMember = repository.findById(memberId).orElseThrow();
         findMember.setCar(updateParam.getId());
+    }
+    public void updateDow(long id, String param) {
+        Member member = repository.findById(id).orElseThrow();
+        member.setDow(param);
     }
 
     @Override
@@ -99,6 +103,7 @@ public class JpaMemberRepository implements MemberRepository{
         repository.delete(member);
         return null;
     }
+
 
 
 }

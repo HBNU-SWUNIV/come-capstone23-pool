@@ -15,7 +15,7 @@ import java.util.Set;
 @Table(name = "MEMBER")
 public class Member {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //(jpa)PK(primary key)이면서->@ID / db 자동생성 -> @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotEmpty
     @Column(name = "login_id", length = 10)
@@ -38,6 +38,9 @@ public class Member {
     private int late;
 
     private String token;
+    private String home;
+
+    private String dow;
 
     @OneToMany(mappedBy = "member",cascade = CascadeType.REMOVE)
     private Set<MemberAndChat> enrollments = new HashSet<>();
@@ -50,7 +53,7 @@ public class Member {
     public Member() {// **JPA 에서는 빈 생성자가 필수 요소이다**
     }
 
-    public Member(String loginId, String password,String name,Long profile,String gender, Long car,int money,float score,int late) {
+    public Member(String loginId, String password,String name,Long profile,String gender, Long car,int money,float score,int late,String home,String dow) {
         this.loginId = loginId;
         this.password = password;
         this.name = name;
@@ -60,6 +63,8 @@ public class Member {
         this.money = money;
         this.score =score;
         this.late = late;
+        this.home = home;
+        this.dow = dow;
     }
 
     public Member(String token) {

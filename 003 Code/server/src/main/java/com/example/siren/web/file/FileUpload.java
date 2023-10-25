@@ -58,18 +58,7 @@ public class FileUpload {
         return ResponseEntity.ok().build();
     }
 
- /*   @ResponseBody
-    @GetMapping("/download")
-    public ResponseEntity<UrlResource> downloadImage(@RequestParam long id) throws MalformedURLException {
-        Board board = boardService.findBoard(id).orElseThrow(RuntimeException::new);
-        String imgPath = board.getStoredFileName();
-        UrlResource resource = new UrlResource("file:"+imgPath);
 
-        String encodedUploadFileName = UriUtils.encode("2.png", StandardCharsets.UTF_8);
-        String contentDisposition = "attachment; filename=\""+encodedUploadFileName+"\"";
-
-        return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, contentDisposition).body(resource);
-    }*/
  @GetMapping("/download")
  public ResponseEntity<Resource> display(@RequestParam long id) throws IOException {
      Optional<Member> member = memberService.findById(id);
@@ -77,7 +66,7 @@ public class FileUpload {
      Long profile = member.get().getProfile();
      Board board = boardService.findBoard(profile).orElseThrow(RuntimeException::new);
      String imgPath = board.getStoredFileName();
-     Resource resource = new FileSystemResource("저장위치");
+     Resource resource = new FileSystemResource("address");
 
      if(!resource.exists())
          return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
@@ -85,7 +74,7 @@ public class FileUpload {
      Path filePath = null;
 
      try{
-         filePath = Paths.get("저장위치");
+         filePath = Paths.get("address");
          headers.add("Content-Type", Files.probeContentType(filePath));
      }catch (IOException e){
          e.printStackTrace();

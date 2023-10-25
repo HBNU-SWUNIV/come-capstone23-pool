@@ -51,18 +51,6 @@ public class CarFileUpload {
         return ResponseEntity.ok().build();
     }
 
- /*   @ResponseBody
-    @GetMapping("/download")
-    public ResponseEntity<UrlResource> downloadImage(@RequestParam long id) throws MalformedURLException {
-        Board board = boardService.findBoard(id).orElseThrow(RuntimeException::new);
-        String imgPath = board.getStoredFileName();
-        UrlResource resource = new UrlResource("file:"+imgPath);
-
-        String encodedUploadFileName = UriUtils.encode("2.png", StandardCharsets.UTF_8);
-        String contentDisposition = "attachment; filename=\""+encodedUploadFileName+"\"";
-
-        return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, contentDisposition).body(resource);
-    }*/
  @GetMapping("/download")
  public ResponseEntity<Resource> display(@RequestParam long id) throws IOException {
      Optional<Car> car = carService.findById(id);
@@ -70,7 +58,7 @@ public class CarFileUpload {
      Long image = car.get().getImage();
      CarImage ci = ciService.findCi(image).orElseThrow(RuntimeException::new);
      String imgPath = ci.getStoredFileName();
-     Resource resource = new FileSystemResource("C:\\Users\\hk177\\come-capstone23-pool\\"+imgPath);
+     Resource resource = new FileSystemResource("address");
 
      if(!resource.exists())
          return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
@@ -78,7 +66,7 @@ public class CarFileUpload {
      Path filePath = null;
 
      try{
-         filePath = Paths.get("C:\\Users\\hk177\\come-capstone23-pool\\"+imgPath);
+         filePath = Paths.get("address");
          headers.add("Content-Type", Files.probeContentType(filePath));
      }catch (IOException e){
          e.printStackTrace();

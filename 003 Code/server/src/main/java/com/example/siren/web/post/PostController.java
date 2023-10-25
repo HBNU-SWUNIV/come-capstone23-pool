@@ -1,6 +1,8 @@
 package com.example.siren.web.post;
 
 import com.example.siren.domain.MnN.service.MapService;
+import com.example.siren.domain.app.Application;
+import com.example.siren.domain.app.repository.AppRepository;
 import com.example.siren.domain.member.Member;
 import com.example.siren.domain.member.repository.MemberRepository;
 import com.example.siren.domain.member.service.MemberService;
@@ -12,12 +14,14 @@ import com.example.siren.web.error.ErrorResult;
 import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -31,6 +35,8 @@ public class PostController {
     private final PostService postService;
     private final MemberService memberService;
 
+    private final AppRepository appRepository;
+
     private final MapService mapService;
 
     @ResponseBody
@@ -43,17 +49,33 @@ public class PostController {
     @ResponseBody
     @PostMapping("/post-json")
     public Post requestBodyJson(@RequestBody Post post){
-        log.info("name = {},loginId = {}, content ={}",post.getName(),post.getLoginId(),post.getContent());
-        Post sPost = postService.save(post);
+        log.info("name = {},loginId = {}, people ={}",post.getName(),post.getLoginId(),post.getPeople());
+        Optional<Member> writer = memberService.findById(post.getWriterId());
+        log.info("writer = {}",writer.get().getLoginId());
 
-        return sPost;
+        String s = String.valueOf(post.getPeople());
+        s.replace("x","1");
+        log.info("replace = {}",s);
+
+        post.setPeople(s);
+
+        String check = memberService.checkForMap(writer.get().getLoginId(), post.getDow(), post.getTimes());
+        if(check.equals("o")){
+            Post sPost = postService.save(post);
+            mapService.saveForDriver(writer.get().getLoginId(),sPost.getId(),sPost.getDow(),sPost.getTimes());
+            post.setDow("o");
+        }else {
+            log.info("저장실패");
+            post.setDow("x");
+        }
+        return post;
     }
     @ResponseBody
     @PostMapping("/writerId")
     public Post getPostFromWriterId(@RequestBody PostDto postDto){
-       long id = postDto.getWriterId();
-       log.info("writerId = {}",id);
-       Post post = postService.findByWriterId(id).get();
+        long id = postDto.getWriterId();
+        log.info("writerId = {}",id);
+        Post post = postService.findByWriterId(id).get();
         return post;
     }
     @ResponseBody
@@ -76,25 +98,20 @@ public class PostController {
 
     @ResponseBody
     @PostMapping("/review")
-    public String review(@RequestBody PostReviewDto reviewDto){
-        String mapCheck = mapService.updateReview(reviewDto.getId(), reviewDto.getMemberId());
+    public PostReviewDto review(@RequestBody PostReviewDto reviewDto){
+        String mapCheck = mapService.updateReview(reviewDto);
         if(mapCheck.equals("o")){
             postService.updateReview(reviewDto);
-            return "o";
+            reviewDto.setResult("o");
         }else {
-            return "x";
+            reviewDto.setResult("x");
         }
+        return reviewDto;
     }
     @ResponseBody
     @GetMapping
     public String posts(@ModelAttribute("postSearch")PostSearchCond cond){
-        //  private float review;
-        //    @Column(name = "R_COUNT")
-        //    private int rCount;
-        //    private String mode;
-        //    private String driver;
-        //    private String app;
-        //    private String weight;
+
         log.info("cond.start={}",cond.getStart());
         List<Post> postList= postService.findItems(cond);
         JSONObject obj = new JSONObject();
@@ -122,7 +139,7 @@ public class PostController {
             return obj.toString();
 
         } catch (JSONException e) {
-          return "error";
+            return "error";
         }
     }
     @ResponseBody
@@ -144,7 +161,17 @@ public class PostController {
 
         return obj.toString();
     }
-
+    @ResponseBody
+    @PostMapping("/app")
+    public String requestBodyJson(@RequestBody Application app){
+        log.info("appMemberID={}, dow={}",app.getMemberId(),app.getDow());
+        Application save = appRepository.save(app);
+        if(save==null){
+            return "x";
+        }else {
+            return "o";
+        }
+    }
     @ResponseBody
     @GetMapping("/appList")
     public String appList(@RequestParam Long postId){
@@ -157,12 +184,15 @@ public class PostController {
             for (int i = 0; i < apps.length; i++)//배열
             {
                 long id = Long.parseLong(apps[i]);
+                PostUpdateDto pd = new PostUpdateDto(postId,id);
+                Application application = appRepository.findByMemberId(pd);
                 Optional<Member> member = memberService.findById(id);
                 JSONObject sObject = new JSONObject();//배열 내에 들어갈 json
                 sObject.put("id",id);
                 sObject.put("name", member.get().getName());
                 sObject.put("profile",member.get().getProfile());
                 sObject.put("score",member.get().getScore());
+                sObject.put("dow", application.getDow());
                 jArray.put(sObject);
             }
             obj.put("item", jArray);//배열을 넣음
@@ -177,6 +207,7 @@ public class PostController {
     @PostMapping("/appDelete")
     public String appDelete(@RequestBody PostUpdateDto param){
         postService.deleteApp(param);
+        appRepository.delete(param);
         return "ok";
     }
 

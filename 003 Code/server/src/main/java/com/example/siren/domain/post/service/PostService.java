@@ -1,5 +1,6 @@
 package com.example.siren.domain.post.service;
 
+import com.example.siren.domain.app.Application;
 import com.example.siren.domain.member.Member;
 import com.example.siren.domain.member.MemberUpdateDto;
 import com.example.siren.domain.post.Post;
@@ -17,7 +18,7 @@ public interface PostService {
     void updateInfo(PostUpdateDto updateParam);
     String updateReview(PostReviewDto dto);
     void deleteApp(PostUpdateDto updateParam);
-    void application(PostUpdateDto updateParam);
+    void application(Application param);
     Optional<Post> findById(Long id);
     Optional<Post>findByWriterId(Long id);
 

@@ -29,4 +29,6 @@ public interface MemberService {
     Member delete(long id);
 
     void token(MemberUpdateDto token);
+
+    String checkForMap(String memberId, String dow,String times);
 }

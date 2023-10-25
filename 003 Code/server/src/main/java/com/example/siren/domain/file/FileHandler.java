@@ -21,9 +21,6 @@ public class FileHandler {
             return fileList;
         }
 
-        // 파일 이름을 업로드 한 날짜로 바꾸어서 저장할 것이다
-       // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
-       // String current_date = simpleDateFormat.format(new Date());
 
 
         // 프로젝트 폴더에 저장하기 위해 절대경로를 설정 (Window 의 Tomcat 은 Temp 파일을 이용한다)
@@ -38,14 +35,13 @@ public class FileHandler {
             file.mkdirs();
         }
 
-        // 파일들을 이제 만져볼 것이다
+
         for (MultipartFile multipartFile : multipartFiles) {
-            // 파일이 비어 있지 않을 때 작업을 시작해야 오류가 나지 않는다
             if (!multipartFile.isEmpty()) {
                 // jpeg, png, gif 파일들만 받아서 처리할 예정
                 String contentType = multipartFile.getContentType();
                 String originalFileExtension;
-                // 확장자 명이 없으면 이 파일은 잘 못 된 것이다
+
                 if (ObjectUtils.isEmpty(contentType)) {
                     break;
                 } else {

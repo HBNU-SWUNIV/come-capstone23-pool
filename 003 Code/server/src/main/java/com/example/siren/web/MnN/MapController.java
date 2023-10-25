@@ -6,6 +6,7 @@ import com.example.siren.domain.MnN.repository.map.MapRepository;
 import com.example.siren.domain.MnN.repository.map.MapRepositoryImpl;
 import com.example.siren.domain.MnN.service.MapService;
 import com.example.siren.domain.member.Member;
+import com.example.siren.domain.member.service.MemberService;
 import com.example.siren.domain.post.Post;
 import com.example.siren.web.FindByNickDTO;
 import lombok.RequiredArgsConstructor;
@@ -31,11 +32,57 @@ public class MapController {
     private final MapService mapService;
     private final MapRepositoryImpl mapRepository;
 
+    private final MemberService memberService;
+
     @ResponseBody
     @PostMapping("/save")
-    public MemberAndPost save(@RequestBody IdDTO2 idDTO2){
+    public IdDTO2 save(@RequestBody IdDTO2 idDTO2){
         log.info("loginId={},postID ={},dow={},times={}",idDTO2.getLoginId(),idDTO2.getPostId(),idDTO2.getDow(),idDTO2.getTimes());
-        return mapService.save(idDTO2.getLoginId(),idDTO2.getPostId(),idDTO2.getDow(),idDTO2.getTimes());
+        String check = memberService.checkForMap(idDTO2.getLoginId(), idDTO2.getDow(), idDTO2.getTimes());
+        if(check.equals("o")){
+            log.info("mapIn");
+            mapService.save(idDTO2.getLoginId(),idDTO2.getPostId(),idDTO2.getDow(),idDTO2.getTimes());
+            idDTO2.setDow("o");
+        }else {
+            log.info("mapOut");
+            idDTO2.setDow("x");
+        }
+        return idDTO2;
+    }
+
+    @ResponseBody
+    @PostMapping("/update")
+    public IdDTO2 update(@RequestBody IdDTO2 idDTO2){
+        log.info("loginId={},postID ={},dow={},times={}",idDTO2.getLoginId(),idDTO2.getPostId(),idDTO2.getDow(),idDTO2.getTimes());
+        if(idDTO2.getDow().equals("delete")){
+            mapService.delete(idDTO2.getLoginId(), idDTO2.getPostId());
+            idDTO2.setDow("o");
+        }else {
+            mapService.delete(idDTO2.getLoginId(), idDTO2.getPostId());
+            String check = memberService.checkForMap(idDTO2.getLoginId(), idDTO2.getDow(), idDTO2.getTimes());
+            if(check.equals("o")){
+                log.info("mapIn");
+                mapService.save(idDTO2.getLoginId(),idDTO2.getPostId(),idDTO2.getDow(),idDTO2.getTimes());
+                idDTO2.setDow("o");
+            }else {
+                log.info("mapOut");
+                idDTO2.setDow("x");
+            }
+        }
+        return idDTO2;
+    }
+
+    @ResponseBody
+    @PostMapping("/check")
+    public IdDTO2 check(@RequestBody IdDTO2 idDTO2){
+        log.info("loginId={},postID ={},dow={},times={}",idDTO2.getLoginId(),idDTO2.getPostId(),idDTO2.getDow(),idDTO2.getTimes());
+        String check = memberService.checkForMap(idDTO2.getLoginId(), idDTO2.getDow(), idDTO2.getTimes());
+        if(check.equals("o")){
+            idDTO2.setDow("o");
+        }else {
+            idDTO2.setDow("x");
+        }
+        return idDTO2;
     }
 
     @ResponseBody
@@ -83,29 +130,7 @@ public class MapController {
             return "error";
         }
     }
-/*    @ResponseBody
-    @PostMapping("/saveCheck")
-    public String saveCheck(@RequestBody IdDTO idDTO){
-        List<MemberAndPost> findMap = mapRepository.findByMemberId(idDTO.getMemberId());
 
-        String [] check = {"x","x","x","x","x","x","x"};
-        for(MemberAndPost i : findMap){
-            String [] arr = i.getDow().split(",");
-            String [] arr2 = i.getTimes().split(",");
-            for(String j:arr){
-                log.info("j={}",j);
-                String input = "";
-                for(String k : arr2 ){
-                    log.info("k={}",k);
-                    input = input+String.valueOf(k.charAt(0));
-                }
-                check[Integer.parseInt(j)-1] = input;
-            }
-        }
-        JSONObject obj = new JSONObject();
-        obj.put("result",check);
-        return obj.toString();
-    }*/
 
     @ResponseBody
     @PostMapping("/member>>post")
@@ -157,6 +182,7 @@ public class MapController {
                 sObject.put("memberName",crews.get(i).getMemberName());
                 sObject.put("dow",crews.get(i).getDow());
                 sObject.put("times",crews.get(i).getTimes());
+                sObject.put("driver",crews.get(i).getDriver());
                 jArray.put(sObject);
             }
             obj.put("item", jArray);//배열을 넣음

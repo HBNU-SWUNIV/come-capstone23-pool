@@ -26,7 +26,7 @@ public class Post {
     @Column(name = "endp")
     private String end;
     private String content;
-    private int people;
+    private String people;
     private String times;
     private String dow;
     private int price;
@@ -67,7 +67,7 @@ public class Post {
         this.content = content;
     }*/
 
-    public Post(Long writerId, String name, String loginId, String start, String end, String content, int people, String times, String dow, int price, String info, String gender, String smoke, String pet, String child, String baggage, float review, int rCount, String mode, String driver, String app, String weight, Set<MemberAndPost> postEnrollments) {
+    public Post(Long writerId, String name, String loginId, String start, String end, String content, String people, String times, String dow, int price, String info, String gender, String smoke, String pet, String child, String baggage, float review, int rCount, String mode, String driver, String app, String weight, Set<MemberAndPost> postEnrollments) {
         this.writerId = writerId;
         this.name = name;
         this.loginId = loginId;

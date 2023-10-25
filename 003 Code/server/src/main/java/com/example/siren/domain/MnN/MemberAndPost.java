@@ -29,12 +29,12 @@ public class MemberAndPost {
     private String dow;
     private String times;
 
-    private boolean review;
+    private String review;
 
     public MemberAndPost() {
     }
 
-    public MemberAndPost(Member postMember, Post post,String dow, String times, boolean review) {
+    public MemberAndPost(Member postMember, Post post,String dow, String times, String review) {
         this.postMember = postMember;
         this.post = post;
         this.dow = dow;

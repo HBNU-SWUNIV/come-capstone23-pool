@@ -8,8 +8,14 @@ public class PostReviewDto {
     private float review;
     private Long memberId;
 
+    private String result;
+
 
     public PostReviewDto() {
+    }
+
+    public PostReviewDto(String result) {
+        this.result = result;
     }
 
     public PostReviewDto(Long id, float review, Long memberId) {

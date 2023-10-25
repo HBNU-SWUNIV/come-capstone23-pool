@@ -20,12 +20,7 @@ public class CarFileHandler {
             return fileList;
         }
 
-        // 파일 이름을 업로드 한 날짜로 바꾸어서 저장할 것이다
-       // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
-       // String current_date = simpleDateFormat.format(new Date());
 
-
-        // 프로젝트 폴더에 저장하기 위해 절대경로를 설정 (Window 의 Tomcat 은 Temp 파일을 이용한다)
         String absolutePath = new File("").getAbsolutePath() + "\\";
 
         // 경로를 지정하고 그곳에다가 저장 String path = "images/" + current_date;
@@ -37,9 +32,9 @@ public class CarFileHandler {
             file.mkdirs();
         }
 
-        // 파일들을 이제 만져볼 것이다
+
         for (MultipartFile multipartFile : multipartFiles) {
-            // 파일이 비어 있지 않을 때 작업을 시작해야 오류가 나지 않는다
+
             if (!multipartFile.isEmpty()) {
                 // jpeg, png, gif 파일들만 받아서 처리할 예정
                 String contentType = multipartFile.getContentType();
@@ -60,7 +55,7 @@ public class CarFileHandler {
                         break;
                     }
                 }
-                // 각 이름은 겹치면 안되므로 나노 초까지 동원하여 지정 String new_file_name = System.nanoTime() + originalFileExtension;
+
                 String new_file_name = String.valueOf(id) + originalFileExtension;
                 // 생성 후 리스트에 추가
                 CarImage ci = CarImage.builder()

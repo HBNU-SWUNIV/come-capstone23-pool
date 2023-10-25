@@ -1,5 +1,6 @@
 package com.example.siren.domain.chat;
 
+import com.example.siren.domain.chat.repository.ChatMessageRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,7 @@ public class ChatService {
 
     private final SpringDataJpaChatRepository repository;
     private final ObjectMapper objectMapper;
+    private final ChatMessageRepository chatMessageRepository;
 
    // private Map<String, ChatRoom> chatRooms;
 
@@ -94,5 +96,12 @@ public class ChatService {
         }catch (IOException e){
             log.error(e.getMessage(),e);
         }
+    }
+    public void saveChatMessage(ChatMessage chatMessage) {
+        chatMessageRepository.save(chatMessage);
+    }
+
+    public List<ChatMessage> getRecord(String chatRoomId) {
+        return chatMessageRepository.findByRoomId(chatRoomId);
     }
 }

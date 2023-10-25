@@ -14,6 +14,7 @@ public interface MemberRepository {
     void updateProfile(MemberUpdateDto updateParam);
 
     void updateCar(MemberUpdateDto updateParam);
+    void updateDow(long id, String param);
 
     void updateMoney(Long memberId,int money);
 

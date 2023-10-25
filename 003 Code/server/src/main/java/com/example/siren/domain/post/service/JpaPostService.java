@@ -1,5 +1,6 @@
 package com.example.siren.domain.post.service;
 
+import com.example.siren.domain.app.Application;
 import com.example.siren.domain.member.Member;
 import com.example.siren.domain.member.MemberUpdateDto;
 import com.example.siren.domain.member.repository.MemberRepository;
@@ -9,6 +10,7 @@ import com.example.siren.domain.post.PostUpdateDto;
 import com.example.siren.domain.post.repository.PostRepository;
 import com.example.siren.web.post.PostReviewDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,12 +19,14 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 @Transactional
+@Slf4j
 public class JpaPostService implements PostService {
 
     private final PostRepository repository;
 
     @Override
     public Post save(Post post) {
+        log.info("savePost = {}",post.getPeople());
         return repository.save(post);
     }
 
@@ -36,8 +40,8 @@ public class JpaPostService implements PostService {
     }
 
     @Override
-    public void application(PostUpdateDto updateParam) {
-        repository.application(updateParam);
+    public void application(Application app) {
+        repository.application(app);
     }
     @Override
     public void deleteApp(PostUpdateDto updateParam) {

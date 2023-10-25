@@ -8,7 +8,7 @@ public class PostUpdateDto {
  /*   private String name;
     private String content;*/
 
-    private int people;
+    private String people;
     private String info;
 
     private Long memberId;
@@ -27,10 +27,10 @@ public class PostUpdateDto {
         this.memberId = memberId;
     }
 
-    public PostUpdateDto(Long id, int people) {
+ /*   public PostUpdateDto(Long id, int people) {
         this.id = id;
         this.people = people;
-    }
+    }*/
 
     public PostUpdateDto(Long id, String info) {
         this.id = id;

@@ -1,5 +1,6 @@
 package com.example.siren.domain.post.repository;
 
+import com.example.siren.domain.app.Application;
 import com.example.siren.domain.member.Member;
 import com.example.siren.domain.post.Post;
 import com.example.siren.domain.post.PostSearchCond;
@@ -25,6 +26,7 @@ public class JpaPostRepository implements PostRepository{
 
     @Override
     public Post save(Post post) {
+        log.info("savePost = {}",post.getPeople());
         return repository.save(post);
     }
 
@@ -32,7 +34,7 @@ public class JpaPostRepository implements PostRepository{
     public void update(PostUpdateDto updateParam) {
         Long postId = updateParam.getId();
         Post findPost = repository.findById(postId).orElseThrow();
-        findPost.setPeople(updateParam.getPeople());
+        findPost.setPeople(updateParam.getInfo());
     }
     @Override
     public void updateInfo(PostUpdateDto updateParam) {
@@ -55,10 +57,10 @@ public class JpaPostRepository implements PostRepository{
     }
 
     @Override
-    public void application(PostUpdateDto updateParam) {
-        Post findPost = repository.findById(updateParam.getId()).orElseThrow();
+    public void application(Application param) {
+        Post findPost = repository.findById(param.getPostId()).orElseThrow();
         String app = findPost.getApp();
-        String memberId = String.valueOf(updateParam.getMemberId());
+        String memberId = String.valueOf(param.getMemberId());
         if(app.equals("x")){
             findPost.setApp(memberId);
         }else {
@@ -146,7 +148,9 @@ public class JpaPostRepository implements PostRepository{
             return repository.findAll();
         }
     }
-
+    public List<Post> findAll2() {
+        return repository.findAll();
+    }
  /*   public List<Post> findWithoutContent(){
         long count = repository.count();
         for(long i=0;i<count;i++){

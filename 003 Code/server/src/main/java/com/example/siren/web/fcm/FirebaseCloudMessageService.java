@@ -18,7 +18,8 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 public class FirebaseCloudMessageService {
-    private final String API_URL = "fcm URL";
+    private final String API_URL = "address";
+
     private final ObjectMapper objectMapper;
 
     public void sendMessageTo(String targetToken, String title, String body) throws IOException {
@@ -26,12 +27,12 @@ public class FirebaseCloudMessageService {
 
         OkHttpClient client = new OkHttpClient();
         RequestBody requestBody = RequestBody.create(message,
-                MediaType.get("application/json; charset=utf-8"));
+                MediaType.get("address"));
         Request request = new Request.Builder()
                 .url(API_URL)
                 .post(requestBody)
                 .addHeader(HttpHeaders.AUTHORIZATION, "Bearer " + getAccessToken())
-                .addHeader(HttpHeaders.CONTENT_TYPE, "application/json; UTF-8")
+                .addHeader(HttpHeaders.CONTENT_TYPE, "address")
                 .build();
 
         Response response = client.newCall(request).execute();
@@ -54,11 +55,11 @@ public class FirebaseCloudMessageService {
     }
 
     private String getAccessToken() throws IOException {
-        String firebaseConfigPath = "firebase/firebase_service_key.json";
+        String firebaseConfigPath = "address";
 
         GoogleCredentials googleCredentials = GoogleCredentials
                 .fromStream(new ClassPathResource(firebaseConfigPath).getInputStream())
-                .createScoped(List.of("https://www.googleapis.com/auth/cloud-platform"));
+                .createScoped(List.of("address"));
 
         googleCredentials.refreshIfExpired();
         return googleCredentials.getAccessToken().getTokenValue();

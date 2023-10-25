@@ -10,6 +10,6 @@ public class fileConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**").addResourceLocations("저장위치");
+        registry.addResourceHandler("/**").addResourceLocations("address");
     }
 }
