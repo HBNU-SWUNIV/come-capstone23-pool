@@ -26,4 +26,6 @@ AWS EC2 환경에서 Spring boot를 사용해서 개발하였습니다. Member P
 	<img src="https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white" />
 </div>
 <br>
-안드로이드 스튜디오를 사용하여 개발을 진행하였습니다. 서버와 Http,Ws(웹소켓) 통신을 위해 Retrofit2 라이브러리를 사용해 Rest API를 
+안드로이드 스튜디오를 사용하여 개발을 진행하였습니다. 서버와 Rest API 통신을 위해 Retrofit2 라이브러리를 사용하였습니다. 
+
+#### 사용한 Open Source SW
