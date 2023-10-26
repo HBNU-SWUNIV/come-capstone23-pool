@@ -73,9 +73,9 @@
 
   
 ## 📲Conclusion
-  - ### 시스템 구성도
+   ### 시스템 구성도
 ![project](https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/da36abb1-c58a-4f56-a4e8-b33c3a01292f)
-  - ### 주요기능
+   ### 주요기능
    - #### 로그인 기능
       - 세션을 활용한 자동 로그인기능
         
