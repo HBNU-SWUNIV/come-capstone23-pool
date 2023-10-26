@@ -1,6 +1,6 @@
 # 한밭대학교 컴퓨터공학과 Pool팀
 **환경보호와 공유경제 실천을 위한 카풀 서비스 앱(Carpool service app for environmental protection and sharing economy)**
-
+![apps](https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/04e18c78-060e-4d22-9342-b24c572afa30)
 ## <u>🏃‍♂️Teamate
 **팀 구성**  
 - 개발&기획
@@ -16,11 +16,11 @@
   - 이러한 문제를 카풀 서비스를 제공하는 앱을 만들어 목적지가 같은 사용자들을 최소한의 차량으로 이동할 수 있도록 함으로써 교통체증을 줄이고 택시나 자가용보다 저렴한 비용으로 차량으로부터 발생되는 매연을 저감하는 것이 이 프로젝트의 주된 목표입니다. 목적지에 도착하기 위해 일시적으로 이용하는 기존 서비스와는 달리 출퇴근과 같은 일정한 주기로 비슷한 목적지를 가진 사용자들을 모집하여 매번 서비스를 이용할 때마다 새로 예약하지 않도록 서비스를 제공할 계획입니다.
   
 ## 💻System Design
-<div align=center>
-	<h3>📚 Tech Stack 📚</h3>
-	<p>✨ Platforms & Languages ✨</p>
-</div>
-<div align="center">
+
+<h3> Tech Stack </h3>
+<h4> Platforms & Languages </h4>
+
+<div align="left">
 	<img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Conda-Forge&logoColor=white" />
 	<img src="https://img.shields.io/badge/jQuery-0769AD?style=flat&logo=jQuery&logoColor=white" />
 	<img src="https://img.shields.io/badge/Spring-6DB33F?style=flat&logo=Spring&logoColor=white" />
@@ -32,10 +32,9 @@
 	
 </div>
 <br>
-<div align=center>
-	<p>🛠 Tools 🛠</p>
-</div>
-<div align=center>
+
+<h4> Tools </h4>
+<div align=left>
 	<img src="https://img.shields.io/badge/Intellij%20IDE-000000?style=flat&logo=intellijidea&logoColor=white" />
 	<img src="https://img.shields.io/badge/Tomcat-F8DC75?style=flat&logo=ApacheTomcat&logoColor=white" />
 	<img src="https://img.shields.io/badge/AWS-232F3E?style=flat&logo=AmazonAWS&logoColor=white" />
@@ -44,9 +43,11 @@
 	<img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white" />	
 	<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white" />
 </div>
-  - ### System Requirements
-    - OOO
-    - OOO
+<br><br>
+
+### System Requirements
+   
+![need](https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/463556d1-1c64-4b2e-bfca-9411fcdcc8ae)
     
 ## 📚Case Study
   - ### 기존 서비스 분석
