@@ -17,3 +17,8 @@
 AWS EC2 환경에서 Spring boot를 사용해서 개발하였습니다. Member Post 등에 대한 정보는 RDBMS인 H2DB에 저장하였고 채팅 기록 DTO인 ChatMessage는 MongoDB에 저장하였고 각각의 DB는 SpringDataJPA ORM을 사용하여 CRUD 작업을 수행하였습니다.
 
 ## Android
+<div align="left">
+	<img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white" />
+	<img src="https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white" />
+</div>
+
