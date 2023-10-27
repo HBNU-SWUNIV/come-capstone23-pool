@@ -136,7 +136,7 @@
     - 차량 사진과 정보 등록 기능
     - 가상 머니 충전, 송금 출금 기능
     - 회원 정보 수정 및 회원 탈퇴 기능 <br><br>
-        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/f693c03b-b280-40ad-9081-65ad3f7dd08e" width="200" height="400"/>
+        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/dcd59b11-9bbe-4c06-a676-babfbfee8011" width="200" height="400"/>
 
    
   ## 🎓Conclusion
