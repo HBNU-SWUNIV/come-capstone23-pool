@@ -20,7 +20,14 @@ AWS EC2 환경에서 Spring boot를 사용해서 개발하였습니다. Member P
 
 #### 사용한 Open Source SW
 - Java
-- Spring & Spring boot
+- Spring & Spring Boot
+- JPA & Spring Boot JPA
+- Google gson
+- H2 DB
+- Mongo DB
+- Firebase
+- OKHttp
+- lombok
 ## Android
 <div align="left">
 	<img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white" />
@@ -38,7 +45,7 @@ AWS EC2 환경에서 Spring boot를 사용해서 개발하였습니다. Member P
 - Retrofit2
 - Naver maps
 - Google Geocoder
-- Fire base FCM
+- Firebase FCM
 - Glide
 - TedPermission
 
