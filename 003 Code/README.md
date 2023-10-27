@@ -24,8 +24,19 @@ AWS EC2 환경에서 Spring boot를 사용해서 개발하였습니다. Member P
 <div align="left">
 	<img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white" />
 	<img src="https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white" />
+	<img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Conda-Forge&logoColor=white" />
 </div>
 <br>
-안드로이드 스튜디오를 사용하여 개발을 진행하였습니다. 서버와 Rest API 통신을 위해 Retrofit2 라이브러리를 사용하였습니다. 
+안드로이드 스튜디오를 사용하여 개발을 진행하였습니다. 서버와 Rest API 통신을 위해 Retrofit2 라이브러리를 사용하였습니다. 앱 UI는 xml으로 구성하였고, 각 인터페이스의 동작은 Java를 사용해서 구현하였습니다.<br>
+출발지와 목적지 세부 설정 기능을 위해 네이버 지도 API와 구글 Geocoder를 사용하였으며 사용자 알림시스템 구현을 위해 구글 파이어베이스 FCM 기능을 사용하였습니다. 그밖에 사용자 프로필 사진 등록과 불러오기 기능은 Glide 라이브러리를 사용하였고
+핸드폰 권한설정 관련 기능은 TedPermission 라이브러리를 사용하여 구현했습니다.
 
 #### 사용한 Open Source SW
+- Android Studio
+- Retrofit2
+- Naver maps
+- Google Geocoder
+- Fire base FCM
+- Glide
+- TedPermission
+
