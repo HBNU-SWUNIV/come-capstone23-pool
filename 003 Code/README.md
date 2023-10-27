@@ -19,7 +19,8 @@ AWS EC2 환경에서 Spring boot를 사용해서 개발하였습니다. Member P
 그 밖에 Spring 프레임워크에서 제공하는 웹소켓 통신 기능을 활용해 채팅 서버를 제공합니다.
 
 #### 사용한 Open Source SW
-
+- Java
+- Spring & Spring boot
 ## Android
 <div align="left">
 	<img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white" />
@@ -32,6 +33,7 @@ AWS EC2 환경에서 Spring boot를 사용해서 개발하였습니다. Member P
 핸드폰 권한설정 관련 기능은 TedPermission 라이브러리를 사용하여 구현했습니다.
 
 #### 사용한 Open Source SW
+- Java
 - Android Studio
 - Retrofit2
 - Naver maps
