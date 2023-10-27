@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/option_dialog_background1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/option_dialog_background">
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="은행"
+        android:textSize="20dp"
+        android:textColor="#000000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <Button
+            android:id="@+id/op_man"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="국민"
+            android:textSize="15dp"
+            android:background="@drawable/round_corner"
+            android:layout_weight="1"
+            android:textColor="#666666"
+            android:layout_marginEnd="5dp"
+            />
+        <Button
+            android:id="@+id/op_woman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="기업"
+            android:textSize="15dp"
+            android:background="@drawable/round_corner"
+            android:layout_weight="1"
+            android:textColor="#666666"
+            android:layout_marginStart="5dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <Button
+            android:id="@+id/op_smoke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="농협"
+            android:textSize="15dp"
+            android:background="@drawable/round_corner"
+            android:layout_weight="1"
+            android:textColor="#666666"
+            android:layout_marginEnd="5dp"
+            />
+        <Button
+            android:id="@+id/op_nonsmoke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="신한"
+            android:textSize="15dp"
+            android:background="@drawable/round_corner"
+            android:layout_weight="1"
+            android:textColor="#666666"
+            android:layout_marginStart="5dp"
+            />
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+            <Button
+                android:id="@+id/op_pet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="우리"
+                android:textSize="15dp"
+                android:background="@drawable/round_corner"
+                android:layout_weight="1"
+                android:textColor="#666666"
+                android:layout_marginEnd="5dp"
+                />
+            <Button
+                android:id="@+id/op_nopet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="카카오뱅크"
+                android:textSize="15dp"
+                android:background="@drawable/round_corner"
+                android:layout_weight="1"
+                android:textColor="#666666"
+                android:layout_marginStart="5dp"
+                />
+
+        </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <Button
+            android:id="@+id/op_child"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_corner"
+            android:text="케이뱅크"
+            android:textColor="#666666"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/op_noChild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="하나"
+            android:textSize="15dp"
+            android:background="@drawable/round_corner"
+            android:layout_weight="1"
+            android:textColor="#666666"
+            android:layout_marginStart="5dp"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+    <Button
+        android:id="@+id/op_ok"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner_blue"
+        android:text="적용"
+        android:textColor="#ffffff"
+        />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

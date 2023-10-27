@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="공지 추가하기"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_margin="15dp"/>
+    <EditText
+        android:id="@+id/info_add_edit"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:textSize="20dp"
+        android:hint="공지를 입력하세요"
+        android:gravity="top"
+        android:layout_weight="1"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_corner"
+        android:textColor="#000000"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="20dp"
+            >
+            <Button
+                android:id="@+id/info_add_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="취소"
+                android:background="@drawable/round_corner"
+                android:layout_marginEnd="5dp"
+                />
+
+            <Button
+                android:id="@+id/info_add_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:text="확인"
+                android:textColor="#ffffff"
+                android:background="@drawable/round_corner_blue"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

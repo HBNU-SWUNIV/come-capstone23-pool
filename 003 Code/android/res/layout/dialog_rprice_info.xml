@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/round_corner"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="추천 가격"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"/>
+    
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:textSize="15dp"
+        android:textColor="#666666"
+        android:text="200M 당 100원으로  "
+        />
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="15dp"
+        android:textColor="#222222"
+        android:textStyle="bold"
+        android:text="탑승자끼리 각자 본인 소유의 차량으로 번갈아\n운전하여 무료로 이용하는 모드입니다."
+        />
+    <TextView
+       android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="15dp"
+        android:textSize="12dp"
+        android:textColor="#666666"
+        android:text="*차량 등록한 회원만 이용 가능합니다.                               "
+        />
+    <Button
+        android:id="@+id/dcid_cancel"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/round_corner_blue"
+        android:text="닫기"
+        android:textColor="#ffff"
+
+        />
+</LinearLayout>

@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            style="@style/HyperlinkGray">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="     게시판"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+            <Button
+                android:id="@+id/mail"
+                android:layout_width="39dp"
+                android:layout_height="35dp"
+                android:background="@drawable/icon_mail"
+                android:layout_gravity="end"
+                android:layout_marginEnd="10dp"
+               />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/FirstFrame"
+            android:layout_width="match_parent"
+            android:layout_height="134dp">
+
+            <LinearLayout
+                android:id="@+id/crew_profile_background"
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:background="#BE9AFD"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/crew_driver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:text="님의\n운전일정"
+                    android:textColor="#ffffff"
+                    android:textSize="25dp"
+                    android:layout_marginTop="20dp"/>
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/crew_profile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="#000000" />
+
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/crew_start1"
+                style="@style/HyperlinkGray"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginBottom="10dp"
+                android:text="출발지           "
+                android:textColor="#000000"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/crew_end1"
+                style="@style/HyperlinkGray"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginBottom="10dp"
+                android:text="목적지           "
+                android:textColor="#000000"
+                android:textSize="15dp"  />
+            <TextView
+                android:id="@+id/crew_d_type"
+                style="@style/HyperlinkGray"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginBottom="10dp"
+                android:text="운행방식       "
+                android:textColor="#000000"
+                android:textSize="15dp"  />
+            <TextView
+                android:id="@+id/crew_tx_dow"
+                style="@style/HyperlinkGray"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginBottom="10dp"
+                android:text="요일              "
+                android:textColor="#000000"
+                android:textSize="15dp"  />
+
+            <TextView
+                android:id="@+id/crew_time1"
+                android:layout_width="match_parent"
+                style="@style/HyperlinkGray"
+                android:layout_height="32dp"
+                android:layout_marginBottom="10dp"
+                android:text="시간               "
+                android:textColor="#000000"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/crew_drivers"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginBottom="10dp"
+                android:text="운전자           "
+                android:textColor="#000000"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="#F1F1F1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="공지"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+                <ImageView
+                    android:id="@+id/indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/icon_expand"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/crew_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="공지사항"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:visibility="gone"
+              />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="end">
+                <Button
+                    android:id="@+id/crew_info_add"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:textSize="15dp"
+                    android:textColor="#222222"
+                    android:background="@drawable/round_corner"
+                    android:layout_marginEnd="10dp"
+                    android:text="추가"
+                    android:visibility="gone"/>
+                <Button
+                    android:id="@+id/crew_info_cancel"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:textSize="15dp"
+                    android:textColor="#222222"
+                    android:background="@drawable/round_corner"
+                    android:text="삭제"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="#F1F1F1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="탑승자 목록 "
+                    android:textColor="#222222"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
+
+
+                <Button
+                    android:id="@+id/crew_add1"
+                    android:layout_width="70dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:textColor="#222222"
+                    android:background="@drawable/round_corner"
+                    android:text="추가하기"
+                    android:layout_marginEnd="10dp"
+                    />
+                <Button
+                    android:id="@+id/crew_update"
+                    android:layout_width="70dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:textColor="#222222"
+                    android:background="@drawable/round_corner"
+                    android:text="변경하기"
+                    />
+                <Button
+                    android:id="@+id/crew_review"
+                    android:layout_width="70dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:textColor="#222222"
+                    android:background="@drawable/round_corner"
+                    android:text="평가하기"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/icon_star"/>
+                <TextView
+                    android:id="@+id/item_crew_into_ever"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="평점"
+                    android:textColor="#000000"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"/>
+                <TextView
+                    android:id="@+id/item_crew_into_ever_cnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:text="(평가자수)"
+                    android:textColor="#666666"
+                    android:textSize="15dp"
+                    android:layout_marginStart="5dp"/>
+            </LinearLayout>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/table_inside"
+                android:stretchColumns="0">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/table_inside">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:text="오전"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:text="오후"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/table_inside">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:text="월"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/crew_mon1"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/table_inside"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/crew_mon2"
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/table_inside">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:text="화"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/crew_tues1"
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/crew_tues2"
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/table_inside">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:text="수"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/crew_wen1"
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/crew_wen2"
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/table_inside">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:text="목"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/crew_thurs1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/crew_thurs2"
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/table_inside">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:text="금"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/crew_fri1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/crew_fri2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/table_inside"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                </TableRow>
+            </TableLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+</ScrollView>

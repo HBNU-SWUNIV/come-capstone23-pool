@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/HyperlinkGray">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="회원탈퇴"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+    </LinearLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/caution"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원탈퇴 안내"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textColor="#222222"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="탈퇴 시 모든 데이터가 삭제되며\n사용 중인 아이디는 재사용 및 복구가 불가합니다.\n 탈퇴하시겠습니까?"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:textColor="#666666"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp" >
+    <CheckBox
+        android:id="@+id/withdraw_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안내사항을 확인하였으며 동의합니다."
+        android:textColor="#000000"/>
+    <EditText
+        android:id="@+id/witdraw_pw"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/round_corner"
+        android:hint="비밀번호를 입력하세요"
+        android:inputType="textCapWords"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#999999" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/witdraw_cancel"
+            android:layout_width="wrap_content"
+            android:layout_weight="2"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/round_corner_stroke_blue"
+            android:text="취소하기"
+            android:textColor="#4946E7" />
+        <Button
+            android:id="@+id/witdraw_ok"
+            android:layout_width="wrap_content"
+            android:layout_weight="2"
+            android:layout_height="60dp"
+            android:background="@drawable/round_corner_blue"
+            android:text="탈퇴하기"
+            android:textColor="#ffff" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">capSton_pj</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="text1">지도를 움직여 위치를 설정하세요</string>
+    <string name="text2">서울특별시 강남구</string>
+    <string name="btn">확인</string>
+</resources>

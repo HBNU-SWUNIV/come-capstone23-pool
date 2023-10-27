@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/FirstFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+       >
+        <Button
+            android:id="@+id/car_profile"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/circle_btn_forcar"
+            android:text="+"
+            android:textSize="40dp"
+            android:textColor="#666666"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
+            android:stateListAnimator="@null"
+            />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/car_set_profile"
+            android:layout_marginTop="30dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
+            />
+
+        <Button
+            android:id="@+id/add_car_profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/profile_background"
+            android:text="+"
+            android:stateListAnimator="@null"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="190dp"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="차량번호"
+            android:layout_gravity="center"
+            android:textColor="#222222"
+            android:textSize="18dp">
+
+        </TextView>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <EditText
+            android:id="@+id/regi_carNum"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:background="@drawable/round_corner"
+            android:hint="차량번호를 입력하세요"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제조사"
+            android:layout_gravity="center"
+            android:textColor="#222222"
+            android:textSize="18dp">
+
+        </TextView>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <EditText
+            android:id="@+id/regi_carMaker"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:background="@drawable/round_corner"
+            android:hint="제조사를 입력하세요"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="모델"
+            android:textColor="#222222"
+            android:layout_gravity="center"
+            android:textSize="18dp">
+
+        </TextView>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <EditText
+            android:id="@+id/regi_carModel"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:background="@drawable/round_corner"
+            android:hint="모델명을을 입력하세"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="차종"
+            android:layout_gravity="center"
+            android:textColor="#222222"
+            android:textSize="18dp">
+
+        </TextView>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner">
+
+            <Spinner
+
+                android:id="@+id/regi_type"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:paddingStart="10dp"
+                android:entries="@array/carType" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/check"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="check" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/regi_save"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_corner_gray"
+        android:text="등록하기"
+        android:textColor="#ffff" />
+</LinearLayout>

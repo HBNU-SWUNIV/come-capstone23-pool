@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/option_dialog_background1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/option_dialog_background">
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="성별"
+        android:textSize="20dp"
+        android:textColor="#000000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <Button
+            android:id="@+id/op_man"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="남자만"
+            android:textSize="15dp"
+            android:background="@drawable/round_corner"
+            android:layout_weight="1"
+            android:textColor="#666666"
+            android:layout_marginEnd="5dp"
+            />
+        <Button
+            android:id="@+id/op_woman"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="여자만"
+            android:textSize="15dp"
+            android:background="@drawable/round_corner"
+            android:layout_weight="1"
+            android:textColor="#666666"
+            android:layout_marginStart="5dp"
+            />
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="흡연차량여부"
+        android:textSize="20dp"
+        android:textColor="#000000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <Button
+            android:id="@+id/op_smoke"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="흡연"
+            android:textSize="15dp"
+            android:background="@drawable/round_corner"
+            android:layout_weight="1"
+            android:textColor="#666666"
+            android:layout_marginEnd="5dp"
+            />
+        <Button
+            android:id="@+id/op_nonsmoke"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="비흡연"
+            android:textSize="15dp"
+            android:background="@drawable/round_corner"
+            android:layout_weight="1"
+            android:textColor="#666666"
+            android:layout_marginStart="5dp"
+            />
+
+    </LinearLayout>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="반려동물동반"
+            android:textSize="20dp"
+            android:textColor="#000000"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+            <Button
+                android:id="@+id/op_pet"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="가능"
+                android:textSize="15dp"
+                android:background="@drawable/round_corner"
+                android:layout_weight="1"
+                android:textColor="#666666"
+                android:layout_marginEnd="5dp"
+                />
+            <Button
+                android:id="@+id/op_nopet"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="불가능"
+                android:textSize="15dp"
+                android:background="@drawable/round_corner"
+                android:layout_weight="1"
+                android:textColor="#666666"
+                android:layout_marginStart="5dp"
+                />
+
+        </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="아이동반"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <Button
+            android:id="@+id/op_child"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_corner"
+            android:text="가능"
+            android:textColor="#666666"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/op_noChild"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="불가능"
+            android:textSize="15dp"
+            android:background="@drawable/round_corner"
+            android:layout_weight="1"
+            android:textColor="#666666"
+            android:layout_marginStart="5dp"
+            />
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="탑승자 화물소지"
+        android:textSize="20dp"
+        android:textColor="#000000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <Button
+            android:id="@+id/op_baggage"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="가능"
+            android:textSize="15dp"
+            android:background="@drawable/round_corner"
+            android:layout_weight="1"
+            android:textColor="#666666"
+            android:layout_marginEnd="5dp"
+            />
+        <Button
+            android:id="@+id/op_noBaggage"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="불가능"
+            android:textSize="15dp"
+            android:background="@drawable/round_corner"
+            android:layout_weight="1"
+            android:textColor="#666666"
+            android:layout_marginStart="5dp"
+            />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:visibility="gone"
+        android:id="@+id/op_weightCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="무게 제한"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:layout_marginStart="10dp"/>
+
+        <LinearLayout
+            android:id="@+id/op_weightLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="최대 무게"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/op_weight"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+
+                android:background="@drawable/round_corner"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="kg"
+                android:textSize="15dp"
+                android:layout_weight="2"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"
+                android:gravity="center|start"/>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+    <Button
+        android:id="@+id/op_ok"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner_blue"
+        android:text="적용"
+        android:textColor="#ffffff"
+        />
+    </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

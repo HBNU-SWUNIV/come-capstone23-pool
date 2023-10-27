@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/HyperlinkGray">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="게시글 등록"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제목"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/post_title_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/round_corner"
+            android:hint="제목을 입력하세요."
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="출발지"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/post_edit_start"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/round_corner"
+            android:hint="출발지를 입력하세요."
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="목적지"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/post_edit_end"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/round_corner"
+            android:hint="목적지를 입력하세요."
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="운행방식"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/morningcheck"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner"
+                android:text="편도"
+                android:textColor="#666666"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/afternooncheck"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner"
+                android:text="왕복"
+                android:textColor="#666666"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="운행일정"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/mon"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner"
+                android:text="월" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="15dp" />
+
+            <Button
+                android:id="@+id/tuse"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner"
+                android:text="화" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="15dp" />
+
+            <Button
+                android:id="@+id/wen"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner"
+                android:text="수" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="15dp" />
+
+            <Button
+                android:id="@+id/thurs"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner"
+                android:text="목" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="15dp" />
+
+            <Button
+                android:id="@+id/fri"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner"
+                android:text="금" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner">
+
+                <Spinner
+                    android:id="@+id/time1_noon"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:entries="@array/day" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner">
+
+                <Spinner
+                    android:id="@+id/time1_hour"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:entries="@array/hour1" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner">
+
+                <Spinner
+                    android:id="@+id/time1_min"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:entries="@array/min" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner">
+
+                <Spinner
+                    android:id="@+id/time2_noon"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:entries="@array/day" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner">
+
+                <Spinner
+                    android:id="@+id/time2_hour"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:entries="@array/hour1" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner">
+
+                <Spinner
+                    android:id="@+id/time2_min"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:entries="@array/min" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="기간 설정"
+            android:textColor="#000000" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="가격"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/post_price"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/round_corner"
+            android:hint="가격을 입력하세요."
+            android:inputType="number"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+        <LinearLayout
+            android:id="@+id/post_rprice_lay"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/post_rprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:text="추천가격 : "/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/post_rprice_info"
+                android:layout_width="30dp"
+                android:layout_height="43dp"
+                android:background="@drawable/info"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="25dp"
+            android:text="탑승자 정원"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/round_corner">
+
+            <Spinner
+                android:id="@+id/post_spinner_people"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:entries="@array/people" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="옵션"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/post_add_option"
+                android:layout_width="24dp"
+                android:layout_height="25dp"
+                android:background="@drawable/icon_add" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/option_nothing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:padding="10dp"
+            android:text="남녀 모두, 비흡연, 반려동물동반 가능, 아이동반 불가능,탑승자 화물소지 불가능"
+            android:textColor="#666666"
+            android:textSize="16dp" />
+        <LinearLayout
+            android:id="@+id/option_confirm"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/post_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:text="성별 : "
+                android:textColor="#222222"
+                android:textSize="16dp" />
+            <TextView
+                android:id="@+id/post_smoke"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="흡연여부 : "
+                android:textColor="#222222"
+                android:textSize="16dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/post_pet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:text="반려동물동반 : "
+                android:textColor="#222222"
+                android:textSize="16dp" />
+            <TextView
+                android:id="@+id/post_child"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="아이동반 : "
+                android:textColor="#222222"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/post_baggage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="탑승자 화물소지 : "
+            android:layout_marginBottom="25dp"
+            android:textColor="#222222"
+            android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/post_driverChange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="교대 운전자 모집"
+                android:textSize="18dp"
+                android:textColor="#000000" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/post_dcInfo"
+                android:layout_width="30dp"
+                android:layout_height="43dp"
+                android:background="@drawable/info"
+                />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="추가 전달사항"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/round_corner">
+
+            <EditText
+                android:id="@+id/post_contents_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:hint="추가 전달사항을 입력하세요"
+                android:padding="5dp"
+                android:textColor="#666666"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/post_save_button"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/round_corner_blue"
+            android:text="등록하기"
+            android:textColor="#ffff" />
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

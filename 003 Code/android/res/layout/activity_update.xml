@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/HyperlinkGray">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="회원정보 수정"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            />
+        <EditText
+            android:id="@+id/update_id"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/round_corner"
+            android:hint="아이디를 입력하세요"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="현재 비밀번호"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            />
+        <TextView
+            android:id="@+id/update_pw_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="※ 회원정보를 수정하려면 현재 비밀번호를 입력해 주세요"
+            android:textColor="#FF3232"
+            android:textSize="12dp"
+            />
+        <EditText
+            android:id="@+id/update_pw_now"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/round_corner"
+            android:hint="현재 비밀번호를 입력하세요"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="새 비밀번호"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="※ 영문, 숫자 조합 6~10자리로 생성"
+            android:textColor="#666666"
+            android:textSize="12dp"
+            />
+        <EditText
+            android:id="@+id/update_pw"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/round_corner"
+            android:hint="새 비밀번호를 입력하세요"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호 확인"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            />
+        <EditText
+            android:id="@+id/update_pw_check"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/round_corner"
+            android:hint="새 비밀번호를 한 번 더 입력하세요"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="닉네임"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="중복체크"
+                android:textColor="#000000"
+                style="@style/Hyperlink"
+                android:textSize="16dp"
+                />
+        </LinearLayout>
+        <EditText
+            android:id="@+id/update_name"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_corner"
+            android:hint="닉네임"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+        <TextView
+            android:id="@+id/update_withdraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원탈퇴"
+            android:textColor="#999999"
+            style="@style/HyperlinkGray"
+            />
+        <Button
+            android:id="@+id/update_btn"
+            android:layout_marginBottom="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corner_blue"
+            android:text="수정하기"
+            android:textColor="#ffff"
+            />
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="test1">
+        <item>7:00</item>
+        <item>8:00</item>
+        <item>9:00</item>
+
+    </string-array>
+    <string-array name="hour1">
+        <item>07시</item>
+        <item>08시</item>
+        <item>09시</item>
+
+    </string-array>
+    <string-array name="hour2">
+        <item>06시</item>
+        <item>07시</item>
+        <item>08시</item>
+    </string-array>
+    <string-array name="min">
+        <item>00분</item>
+        <item>10분</item>
+        <item>20분</item>
+        <item>30분</item>
+        <item>40분</item>
+        <item>50분</item>
+    </string-array>
+
+    <string-array name="carType">
+        <item>세단</item>
+        <item>쿠페</item>
+        <item>SUV</item>
+        <item>컨버터블</item>
+        <item>밴</item>
+        <item>기타</item>
+    </string-array>
+</resources>

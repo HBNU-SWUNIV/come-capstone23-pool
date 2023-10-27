@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="people">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="day">
+        <item>오전</item>
+        <item>오후</item>
+    </string-array>
+    <string-array name="day2">
+        <item>오후</item>
+    </string-array>
+    <string-array name="gender">
+        <item>남</item>
+        <item>여</item>
+    </string-array>
+
+    <string-array name="home">
+        <item>서울</item>
+        <item>경기도</item>
+        <item>인천</item>
+        <item>강원도</item>
+        <item>대전</item>
+        <item>충청북도</item>
+        <item>충청남도</item>
+        <item>대구</item>
+        <item>울산</item>
+        <item>부산</item>
+        <item>경상북도</item>
+        <item>경상남도</item>
+        <item>광주</item>
+        <item>전라북도</item>
+        <item>전라남도</item>
+
+    </string-array>
+</resources>
