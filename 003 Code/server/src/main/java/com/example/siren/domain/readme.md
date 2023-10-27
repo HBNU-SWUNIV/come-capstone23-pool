@@ -9,9 +9,11 @@
  - #### Crew.java : Post에 포함된 Member로써 map 패키지에서 사용되는 DTO
  - #### MemberAndChat.java : mac테이블과의 연결을 위한 DTO
  - #### MemberAndPost.java  : map테이블과의 연결을 위한 DTO
+   
 ## app
 카풀 게시물에 신청(application)을 하면 신청자들의 정보 리스트를 저장 및 관리하고 이를 게시물 관리자에게 보여주기 위한 기능을 수행합니다.<br>
-
+ - #### repository : 카풀신청자의 정보와 게시물과 연결하여 관리하는 역할을 수행
+ - #### Application.java : 카풀 신청자 정보를 관리에 사용되는 DTO 
 ## car
 사용자의 자동차 정보를 관리합니다. Member테이블과 매핑되어있고 차량사진의 정보를 저장하는 carImage 테이블과 1:1 매핑이 되어있습니다.
 
