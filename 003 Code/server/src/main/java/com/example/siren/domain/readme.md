@@ -13,10 +13,15 @@
 ## app
 카풀 게시물에 신청(application)을 하면 신청자들의 정보 리스트를 저장 및 관리하고 이를 게시물 관리자에게 보여주기 위한 기능을 수행합니다.<br>
  - #### repository : 카풀신청자의 정보와 게시물과 연결하여 관리하는 역할을 수행
- - #### Application.java : 카풀 신청자 정보를 관리에 사용되는 DTO 
+ - #### Application.java : 카풀 신청자 정보를 관리에 사용되는 DTO
+   
 ## car
 사용자의 자동차 정보를 관리합니다. Member테이블과 매핑되어있고 차량사진의 정보를 저장하는 carImage 테이블과 1:1 매핑이 되어있습니다.
-
+ - #### Car.java : 자동차 정보에 대한 테이블 관리에 사용되는 DTO
+ - #### CarService.java :CAR 테이블에서 자동차 정보를 삽입, 수정, 조회기능에 대한 인터페이스
+ - #### CarServiceImple.java : CarService.java의 구현 클래스
+ - #### SpringDataJpaCarRepository.java : Spring Data JPA를 상속받아 CAR 테이블에 CRUD 기능을 실행
+   
 ## carImage
 사용자의 차량사진 정보를 관리합니다. 차량사진이 서버에 어느 위치에 저장되어있는지, 어떤 사용자의 차량사진인지 등을 DB를 사용하여 관리합니다.
 
