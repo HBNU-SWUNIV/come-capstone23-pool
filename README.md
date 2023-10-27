@@ -1,6 +1,7 @@
 # 한밭대학교 컴퓨터공학과 Pool팀
 **환경보호와 공유경제 실천을 위한 카풀 서비스 앱(Carpool service app for environmental protection and sharing economy)**
-![apps](https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/04e18c78-060e-4d22-9342-b24c572afa30)
+![panel](https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/127067775/1ae06c33-c5c6-4056-9471-ef4c7a1dffa9)
+
 ## <u>🏃‍♂️Teamate
 **팀 구성**  
 - 개발&기획
