@@ -100,7 +100,7 @@
       - 카풀 탑승 세부 조건 등록 (성별, 흡연여부, 반려동물 탑승 가능 여부, 아이동반 탑승 가능여부, 화물 소지 가능 여부)
       - 최대 탑승 가능 인원 설정 
       - 추가 전달사항 등록 <br><br>
-        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/7a460606-3b36-482f-8690-b4dc18174198" width="200" height="400"/>
+        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/7a460606-3b36-482f-8690-b4dc18174198" width="200" height="450"/>
 	        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/5d41e566-e468-4675-9703-77c9a44a35d5" width="200" height="400"/>
 
   - #### 카풀 게시물 확인
@@ -108,7 +108,7 @@
       - 카풀 게시물 등록자 정보 확인(사용자 정보 페이지로 이동)
       - 출발지 목적지 터치 시 지도에 위치 표시
       - 카풀 신청 기능 <br><br>
-             <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/95370621-6ede-4061-949c-35611d04a763" width="200" height="400"/>
+             <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/95370621-6ede-4061-949c-35611d04a763" width="200" height="450"/>
 
 
   - #### 등록된 카풀 리스트
@@ -119,7 +119,7 @@
       - 카풀 관리자인 경우 해당 카풀에 새로운 유저 등록 및 기존 유저 탑승 일정 수정 및 삭제 가능
       - 카풀 운행 요일이 표로 나오며 해당 요일에 탑승자 명단과 운전자가 표시
       - 카풀 탑승객인 경우 1회 카풀 평점 등록 가능 <br><br>
-        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/5b780b4e-d3cf-482e-bc31-7a79ace3aaf0" width="200" height="400"/>
+        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/5b780b4e-d3cf-482e-bc31-7a79ace3aaf0" width="200" height="450"/>
   
   - #### 채팅 기능
       - 카풀 관리자는 카풀 신청자 리스트에서 신청자의 평점과 세부 정보확인 가능
