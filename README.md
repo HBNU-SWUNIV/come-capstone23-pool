@@ -119,7 +119,7 @@
       - 카풀 관리자인 경우 해당 카풀에 새로운 유저 등록 및 기존 유저 탑승 일정 수정 및 삭제 가능
       - 카풀 운행 요일이 표로 나오며 해당 요일에 탑승자 명단과 운전자가 표시
       - 카풀 탑승객인 경우 1회 카풀 평점 등록 가능 <br><br>
-        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/7e4f5a57-d259-41ac-a57b-8fe345db178a" width="200" height="450"/>
+        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/7e4f5a57-d259-41ac-a57b-8fe345db178a" width="200" height="500"/>
   
   - #### 채팅 기능
       - 카풀 관리자는 카풀 신청자 리스트에서 신청자의 평점과 세부 정보확인 가능
