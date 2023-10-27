@@ -28,8 +28,10 @@
  - #### CarImage.java : 차량 사진 관리에 사용되는 DTO
  - #### CarServiceImple.java : 차량 사진 정보에 관한 비즈니스로직 실행
  - #### SpringDataJpaCarRepository.java : Spring Data JPA를 상속받아 CARIMAGE 테이블에 CRUD 기능을 실행
+   
 ## chat
 채팅 기능을 구현하는 클래스들이 포함된 패키지입니다. 채팅 방을 생성하여 DB에 저장하고 웹소켓을 사용하여 채팅방에 포함된 사용자끼리 실시간 채팅을 할 수 있도록 했으며 동시에 채팅기록을 몽고DB에 저장합니다.
+ - #### repository : 채팅 기록을 
 
 ## file
 앱에서 사용될 전체적인 사진파일들을 관리하는 패키지 입니다. DB를통해 파일의 저장위치 및 파일 이름등을 저장하고 관리합니다.
