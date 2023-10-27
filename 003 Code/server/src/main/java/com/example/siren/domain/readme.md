@@ -22,7 +22,7 @@
 로그인 기능을 수행하는 패키지입니다. 
 
 ## member
-Contoller와 Controller에서 사용할 DTO 클래스들이 포함된 패키지 입니다.
+사용자 정보를 관리하는 클래스입니다. 
 
 ## post
 Contoller와 Controller에서 사용할 DTO 클래스들이 포함된 패키지 입니다.
