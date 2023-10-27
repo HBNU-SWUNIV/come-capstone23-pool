@@ -38,6 +38,11 @@
  - #### SpringDataJpaChatRepository.java : Spring Data JPA를 상속받아 채팅기능에 관련된 CRUD 기능을 실행
 ## file
 앱에서 사용될 전체적인 사진파일들을 관리하는 패키지 입니다. DB를통해 파일의 저장위치 및 파일 이름등을 저장하고 관리합니다.
+ - #### FileHandler.java : 사진 데이터를 가공하여 서버에 특정 위치에 저장
+ - #### Board.java : 사진 관리에 사용되는 DTO
+ - #### BoardRepository.java : Spring Data JPA를 상속받아 BOARD 테이블에 CRUD 기능을 실행
+ - #### BoardService.java : 사진 정보에 관한 비즈니스로직 실행
+   
 
 ## login
 로그인 기능을 수행하는 패키지입니다. 
