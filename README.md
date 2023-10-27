@@ -89,7 +89,7 @@
       - 게시물 검색 기능(출발지, 도착지, 운행요일, 세부 옵션 등으로 검색)
       - 회원 가입시 등록한 사용자의 거주지와 인접한 출발지를 가진 카풀 게시물만 보는 기능
       - 게시물 요약 정보 확인 (운전자, 별점, 출발지, 도착지, 출발시간)<br><br>
-	<img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/516ddfe4-ff1a-4834-a19f-fa928ea4948f" width="200" height="400"/>
+	<img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/4309219b-9fa3-40d8-9279-bad55ca3fb1e" width="200" height="400"/>
   	<img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/0f55ae73-bdf7-4bf1-988f-2dbec0b43aa6" width="200" height="400"/>   
 
    - #### 카풀 게시물 등록
@@ -108,7 +108,7 @@
       - 카풀 게시물 등록자 정보 확인(사용자 정보 페이지로 이동)
       - 출발지 목적지 터치 시 지도에 위치 표시
       - 카풀 신청 기능 <br><br>
-             <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/95370621-6ede-4061-949c-35611d04a763" width="200" height="450"/>
+             <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/538c3449-4e66-4c22-84fc-d920d6ec30d0" width="200" height="450"/>
 
 
   - #### 등록된 카풀 리스트
@@ -119,7 +119,7 @@
       - 카풀 관리자인 경우 해당 카풀에 새로운 유저 등록 및 기존 유저 탑승 일정 수정 및 삭제 가능
       - 카풀 운행 요일이 표로 나오며 해당 요일에 탑승자 명단과 운전자가 표시
       - 카풀 탑승객인 경우 1회 카풀 평점 등록 가능 <br><br>
-        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/5b780b4e-d3cf-482e-bc31-7a79ace3aaf0" width="200" height="450"/>
+        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/7e4f5a57-d259-41ac-a57b-8fe345db178a" width="200" height="450"/>
   
   - #### 채팅 기능
       - 카풀 관리자는 카풀 신청자 리스트에서 신청자의 평점과 세부 정보확인 가능
