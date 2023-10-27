@@ -83,11 +83,15 @@
    ### 주요기능
    - #### 로그인 기능
       - 세션을 활용한 자동 로그인기능 <br>
+      <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/8ac89075-1000-4259-8a3e-7ece76e0843a" width="200" height="400"/>
+     
    - #### 카풀 게시물 리스트
       - 게시물 검색 기능(출발지, 도착지, 운행요일, 세부 옵션 등으로 검색)
       - 회원 가입시 등록한 사용자의 거주지와 인접한 출발지를 가진 카풀 게시물만 보는 기능
-      - 게시물 요약 정보 확인 (운전자, 별점, 출발지, 도착지, 출발시간)
-        
+      - 게시물 요약 정보 확인 (운전자, 별점, 출발지, 도착지, 출발시간)<br>
+     <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/516ddfe4-ff1a-4834-a19f-fa928ea4948f" width="200" height="400"/>
+     <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/0f55ae73-bdf7-4bf1-988f-2dbec0b43aa6" width="200" height="400"/>   
+
    - #### 카풀 게시물 등록
       - 마이 페이지에서 차량을 등록한 사용자만 게시물 등록 가능
       - 네이버 지도 API를 사용하여 출발지와 목적지를 세밀하게 등록 가능
@@ -95,8 +99,10 @@
       - 카풀 운행 거리에 따른 카풀 요금 추천
       - 카풀 탑승 세부 조건 등록 (성별, 흡연여부, 반려동물 탑승 가능 여부, 아이동반 탑승 가능여부, 화물 소지 가능 여부)
       - 최대 탑승 가능 인원 설정 
-      - 추가 전달사항 등록
-        
+      - 추가 전달사항 등록 <br>
+        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/7a460606-3b36-482f-8690-b4dc18174198" width="200" height="400"/>
+	        <img src="https://github.com/HBNU-SWUNIV/come-capstone23-pool/assets/77769783/5d41e566-e468-4675-9703-77c9a44a35d5" width="200" height="400"/>
+
   - #### 카풀 게시물 확인
       - 카풀 세부 정보 확인(출발지, 운행 요일 및 시간, 세부옵션, 카풀 평점 등)
       - 카풀 게시물 등록자 정보 확인(사용자 정보 페이지로 이동)
