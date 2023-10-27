@@ -44,7 +44,7 @@
  - #### BoardRepository.java : Spring Data JPA를 상속받아 BOARD 테이블에 CRUD 기능을 실행
  - #### BoardService.java : 사진 정보에 관한 비즈니스로직 실행
    
-## login
+## 🔒 login
 로그인 기능을 수행하는 패키지입니다. 
 
 ## 🧑 member
